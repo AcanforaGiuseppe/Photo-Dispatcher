@@ -21,7 +21,7 @@
             {
                 string passNumber = entry.Key;
                 string email = entry.Value;
-                string photoPath = Path.Combine(_photosDirectory, passNumber);
+                string photoPath = Path.Combine(_photosDirectory, $"{passNumber}.jpg");
 
                 if(File.Exists(photoPath))
                 {

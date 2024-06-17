@@ -6,8 +6,8 @@ namespace PhotoDispatcher
     {
         static void Main(string[] args)
         {
-            string photosDirectory = @"C:\path\to\photos";
-            string csvFilePath = @"C:\path\to\emails.csv";
+            string photosDirectory = @"C:\Users\acanf\Desktop\Photos";
+            string csvFilePath = @"C:\Users\acanf\Desktop\emails.csv";
 
             var csvLoader = new CsvLoader();
             var emailSender = new EmailSender("smtp.example.com", 587, "your-email@example.com", "your-email-password");
