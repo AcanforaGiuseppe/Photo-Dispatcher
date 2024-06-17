@@ -25,7 +25,7 @@
 
                 if(File.Exists(photoPath))
                 {
-                    var mail = new Mail(email, "Your Photo from the Event", "Dear attendee, please find attached your photo from the event.", photoPath);
+                    var mail = new Email(email, "Your Photo from the Event", "Dear attendee, please find attached your photo from the event.", photoPath);
                     _emailSender.SendEmail(mail);
                 }
                 else

@@ -1,4 +1,5 @@
-﻿using Photo_Dispatcher;
+﻿using Microsoft.Extensions.Configuration;
+using Photo_Dispatcher;
 
 namespace PhotoDispatcher
 {
@@ -6,14 +7,26 @@ namespace PhotoDispatcher
     {
         static void Main(string[] args)
         {
-            string photosDirectory = @"C:\Users\acanf\Desktop\Photos";
-            string csvFilePath = @"C:\Users\acanf\Desktop\emails.csv";
+            var configuration = new ConfigurationBuilder()
+                             .SetBasePath(Directory.GetCurrentDirectory())
+                             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                             .Build();
 
+            var emailSettings = configuration.GetSection("EmailSettings").Get<EmailSettings>();
+            var paths = configuration.GetSection("Paths").Get<Paths>();
+
+            var emailSender = new EmailSender(emailSettings.SmtpServer, emailSettings.SmtpPort, emailSettings.SmtpUser, emailSettings.SmtpPass, emailSettings.FromName);
             var csvLoader = new CsvLoader();
-            var emailSender = new EmailSender("smtp.example.com", 587, "your-email@example.com", "your-email-password");
-            var photoDispatcher = new PhotoDispatch(photosDirectory, csvLoader, emailSender);
+            var photoDispatcher = new PhotoDispatch(paths.PhotosDirectory, csvLoader, emailSender);
 
-            photoDispatcher.DispatchPhotos(csvFilePath);
+            try
+            {
+                photoDispatcher.DispatchPhotos(paths.CsvFilePath);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(@$"DispatchPhotos failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+            }
 
             Console.WriteLine("Process completed. Press any key to exit.");
             Console.ReadKey();

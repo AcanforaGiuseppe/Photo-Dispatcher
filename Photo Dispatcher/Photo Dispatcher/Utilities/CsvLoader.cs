@@ -10,15 +10,22 @@ namespace Photo_Dispatcher
         {
             var passEmailMap = new Dictionary<string, string>();
 
-            using(var reader = new StreamReader(csvFilePath))
+            try
             {
-                using(var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
+                using(var reader = new StreamReader(csvFilePath))
                 {
-                    var records = csv.GetRecords<CsvRecord>();
+                    using(var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
+                    {
+                        var records = csv.GetRecords<CsvRecord>();
 
-                    foreach(var record in records)
-                        passEmailMap[record.PassNumber] = record.Email;
+                        foreach(var record in records)
+                            passEmailMap[record.PassNumber] = record.Email;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(@$"CSV read action failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
 
             return passEmailMap;

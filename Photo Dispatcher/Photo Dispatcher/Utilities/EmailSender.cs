@@ -9,20 +9,22 @@ namespace Photo_Dispatcher
         private readonly int _smtpPort;
         private readonly string _smtpUser;
         private readonly string _smtpPass;
+        private readonly string _fromName;
 
-        public EmailSender(string smtpServer, int smtpPort, string smtpUser, string smtpPass)
+        public EmailSender(string smtpServer, int smtpPort, string smtpUser, string smtpPass, string fromName)
         {
             _smtpServer = smtpServer;
             _smtpPort = smtpPort;
             _smtpUser = smtpUser;
             _smtpPass = smtpPass;
+            _fromName = fromName;
         }
 
-        public void SendEmail(Mail mail)
+        public void SendEmail(Email mail)
         {
             try
             {
-                var fromAddress = new MailAddress(_smtpUser, "Your Name");
+                var fromAddress = new MailAddress(_smtpUser, _fromName);
                 var toAddress = new MailAddress(mail.To);
                 var smtp = new SmtpClient
                 {
@@ -50,7 +52,7 @@ namespace Photo_Dispatcher
             }
             catch(Exception ex)
             {
-                Console.WriteLine($"Failed to send email to {mail.To}. Error: {ex.Message}");
+                Console.WriteLine(@$"Failed to send email to {mail.To}. - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
         }
 
