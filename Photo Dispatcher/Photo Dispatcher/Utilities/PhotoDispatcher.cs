@@ -36,11 +36,11 @@
                     string passNumber = entry.Key;
                     string email = entry.Value;
 
-                    //                                                          !!!!! TO HANDLE THE PHOTOPATH (NAMING CONVENTIONS ETC...) !!!!!
+                    //                                                          !!!!! TO HANDLE THE PHOTOPATH (NAMING CONVENTIONS, EXTENSION ETC...) !!!!!
 
                     string photoPath = Path.Combine(_photosDirectory, $"{passNumber}.jpg");
 
-                    //                                                          !!!!! TO HANDLE THE PHOTOPATH (NAMING CONVENTIONS ETC...) !!!!!
+                    //                                                          !!!!! TO HANDLE THE PHOTOPATH (NAMING CONVENTIONS, EXTENSION ETC...) !!!!!
 
                     if(File.Exists(photoPath))
                     {

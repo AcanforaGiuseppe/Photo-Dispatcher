@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhotoDispatcher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4ca1ab18bbc151f4bd7c52f53260bbb3d33755d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e892a04d41189e14692763c8f24a668ce9029d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhotoDispatcher")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhotoDispatcher")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
