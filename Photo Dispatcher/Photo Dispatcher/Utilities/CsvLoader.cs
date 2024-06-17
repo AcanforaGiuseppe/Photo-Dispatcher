@@ -4,8 +4,17 @@ using System.Globalization;
 
 namespace Photo_Dispatcher
 {
+    /// <summary>
+    /// This class is responsible for loading and parsing a CSV file that maps pass numbers to email addresses.
+    /// It reads the CSV file and returns a dictionary with the pass numbers as keys and the email addresses as values.
+    /// </summary>
     public class CsvLoader
     {
+        /// <summary>
+        /// Loads the pass number to email address mapping from a specified CSV file.
+        /// </summary>
+        /// <param name="csvFilePath">The path to the CSV file.</param>
+        /// <returns>A dictionary where the keys are pass numbers and the values are email addresses.</returns>
         public Dictionary<string, string> LoadPassEmailMap(string csvFilePath)
         {
             var passEmailMap = new Dictionary<string, string>();
@@ -25,7 +34,7 @@ namespace Photo_Dispatcher
             }
             catch(Exception ex)
             {
-                Console.WriteLine(@$"CSV read action failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                Console.WriteLine(@$"CSV load action failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
 
             return passEmailMap;

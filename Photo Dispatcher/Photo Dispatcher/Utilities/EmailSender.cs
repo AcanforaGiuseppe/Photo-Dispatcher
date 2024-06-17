@@ -3,6 +3,10 @@ using System.Net.Mail;
 
 namespace Photo_Dispatcher
 {
+    /// <summary>
+    /// This class is responsible for sending emails using the provided SMTP server settings.
+    /// It handles the creation and dispatching of email messages, including attachments.
+    /// </summary>
     public class EmailSender
     {
         private readonly string _smtpServer;
@@ -20,6 +24,10 @@ namespace Photo_Dispatcher
             _fromName = fromName;
         }
 
+        /// <summary>
+        /// Sends an email using the specified email details.
+        /// </summary>
+        /// <param name="mail">The email details including recipient, subject, body, and optional attachment.</param>
         public void SendEmail(Email mail)
         {
             try

@@ -14,7 +14,6 @@
             Body = body;
             AttachmentPath = attachmentPath;
         }
-
     }
 
     public class EmailSettings
@@ -24,5 +23,7 @@
         public int SmtpPort { get; set; }
         public string SmtpUser { get; set; }
         public string SmtpPass { get; set; }
+        public string EmailSubject { get; set; }
+        public string EmailBody { get; set; }
     }
 }

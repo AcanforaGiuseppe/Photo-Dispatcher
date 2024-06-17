@@ -17,16 +17,9 @@ namespace PhotoDispatcher
 
             var emailSender = new EmailSender(emailSettings.SmtpServer, emailSettings.SmtpPort, emailSettings.SmtpUser, emailSettings.SmtpPass, emailSettings.FromName);
             var csvLoader = new CsvLoader();
-            var photoDispatcher = new PhotoDispatch(paths.PhotosDirectory, csvLoader, emailSender);
+            var photoDispatcher = new PhotoDispatch(paths.PhotosDirectory, csvLoader, emailSender, emailSettings.EmailSubject, emailSettings.EmailBody);
 
-            try
-            {
-                photoDispatcher.DispatchPhotos(paths.CsvFilePath);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(@$"DispatchPhotos failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
-            }
+            photoDispatcher.DispatchPhotos(paths.CsvFilePath);
 
             Console.WriteLine("Process completed. Press any key to exit.");
             Console.ReadKey();
