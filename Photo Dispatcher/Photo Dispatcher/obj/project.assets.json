@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher.csproj",
-      "projectName": "Photo Dispatcher",
-      "projectPath": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher.csproj",
+      "projectUniqueName": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj",
+      "projectName": "PhotoDispatcher",
+      "projectPath": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj",
       "packagesPath": "C:\\Users\\acanf\\.nuget\\packages\\",
       "outputPath": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\obj\\",
       "projectStyle": "PackageReference",
