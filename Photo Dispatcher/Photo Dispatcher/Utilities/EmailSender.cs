@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using System.Net;
 using System.Net.Mail;
 
 namespace Photo_Dispatcher
@@ -14,14 +16,17 @@ namespace Photo_Dispatcher
         private readonly string _smtpUser;
         private readonly string _smtpPass;
         private readonly string _fromName;
+        private readonly ILogger<EmailSender> _logger;
 
-        public EmailSender(string smtpServer, int smtpPort, string smtpUser, string smtpPass, string fromName)
+        public EmailSender(IOptions<EmailSettings> emailSettings, ILogger<EmailSender> logger)
         {
-            _smtpServer = smtpServer;
-            _smtpPort = smtpPort;
-            _smtpUser = smtpUser;
-            _smtpPass = smtpPass;
-            _fromName = fromName;
+            var settings = emailSettings.Value;
+            _smtpServer = settings.SmtpServer;
+            _smtpPort = settings.SmtpPort;
+            _smtpUser = settings.SmtpUser;
+            _smtpPass = settings.SmtpPass;
+            _fromName = settings.FromName;
+            _logger = logger;
         }
 
         /// <summary>
@@ -56,11 +61,11 @@ namespace Photo_Dispatcher
                     smtp.Send(message);
                 }
 
-                Console.WriteLine($"Email sent to {mail.To} with photo {mail.AttachmentPath}.");
+                _logger.LogInformation($"Email sent to {mail.To} with photo {mail.AttachmentPath}.");
             }
             catch(Exception ex)
             {
-                Console.WriteLine(@$"Failed to send email to {mail.To}. - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                _logger.LogError(ex, @$"Failed to send email to {mail.To}. - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
         }
 

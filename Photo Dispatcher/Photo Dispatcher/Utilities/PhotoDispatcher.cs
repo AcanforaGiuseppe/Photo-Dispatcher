@@ -1,4 +1,7 @@
-﻿namespace Photo_Dispatcher
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+
+namespace Photo_Dispatcher
 {
     /// <summary>
     /// This class is responsible for dispatching photos via email. It handles loading the email mappings from a CSV file,
@@ -11,14 +14,16 @@
         private readonly EmailSender _emailSender;
         private readonly string _emailSubject;
         private readonly string _emailBody;
+        private readonly ILogger<PhotoDispatch> _logger;
 
-        public PhotoDispatch(string photosDirectory, CsvLoader csvLoader, EmailSender emailSender, string emailSubject, string emailBody)
+        public PhotoDispatch(IOptions<Paths> paths, IOptions<EmailSettings> emailSettings, CsvLoader csvLoader, EmailSender emailSender, ILogger<PhotoDispatch> logger)
         {
-            _photosDirectory = photosDirectory;
+            _photosDirectory = paths.Value.PhotosDirectory;
             _csvLoader = csvLoader;
             _emailSender = emailSender;
-            _emailSubject = emailSubject;
-            _emailBody = emailBody;
+            _emailSubject = emailSettings.Value.EmailSubject;
+            _emailBody = emailSettings.Value.EmailBody;
+            _logger = logger;
         }
 
         /// <summary>
@@ -29,6 +34,8 @@
         {
             try
             {
+                _logger.LogInformation("Dispatching photos...");
+
                 var passEmailMap = _csvLoader.LoadPassEmailMap(csvFilePath);
 
                 foreach(var entry in passEmailMap)
@@ -49,13 +56,15 @@
                     }
                     else
                     {
-                        Console.WriteLine($"Photo for pass number {passNumber} not found.");
+                        _logger.LogWarning($"Photo for pass number {passNumber} not found.");
                     }
                 }
+
+                _logger.LogInformation("Photo dispatch process completed.");
             }
             catch(Exception ex)
             {
-                Console.WriteLine(@$"DispatchPhotos failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                _logger.LogError(ex, @$"DispatchPhotos failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
         }
 

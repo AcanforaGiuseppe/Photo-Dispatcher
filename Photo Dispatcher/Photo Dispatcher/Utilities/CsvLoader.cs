@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using Microsoft.Extensions.Logging;
 using System.Globalization;
 
 namespace Photo_Dispatcher
@@ -10,6 +11,13 @@ namespace Photo_Dispatcher
     /// </summary>
     public class CsvLoader
     {
+        private readonly ILogger<CsvLoader> _logger;
+
+        public CsvLoader(ILogger<CsvLoader> logger)
+        {
+            _logger = logger;
+        }
+
         /// <summary>
         /// Loads the pass number to email address mapping from a specified CSV file.
         /// </summary>
@@ -31,10 +39,12 @@ namespace Photo_Dispatcher
                             passEmailMap[record.PassNumber] = record.Email;
                     }
                 }
+
+                _logger.LogInformation("CSV file loaded successfully.");
             }
             catch(Exception ex)
             {
-                Console.WriteLine(@$"CSV load action failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                _logger.LogError(ex, @$"CSV load action failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
 
             return passEmailMap;
