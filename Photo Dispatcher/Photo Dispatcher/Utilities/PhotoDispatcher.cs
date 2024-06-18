@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Text.RegularExpressions;
 
 namespace Photo_Dispatcher
 {
@@ -42,17 +43,20 @@ namespace Photo_Dispatcher
                 {
                     string passNumber = entry.Key;
                     string email = entry.Value;
+                    var regex = new Regex($@"(?<!\d){Regex.Escape(passNumber)}(?!\d)", RegexOptions.IgnoreCase);
 
-                    //                                                          !!!!! TO HANDLE THE PHOTOPATH (NAMING CONVENTIONS, EXTENSION ETC...) !!!!!
+                    var photoFiles = Directory.GetFiles(_photosDirectory)
+                                              .Where(file => regex.IsMatch(Path.GetFileNameWithoutExtension(file)))
+                                              .ToArray();
 
-                    string photoPath = Path.Combine(_photosDirectory, $"{passNumber}.jpg");
-
-                    //                                                          !!!!! TO HANDLE THE PHOTOPATH (NAMING CONVENTIONS, EXTENSION ETC...) !!!!!
-
-                    if(File.Exists(photoPath))
+                    if(photoFiles.Length > 0)
                     {
-                        var mail = new Email(email, _emailSubject, _emailBody, photoPath);
-                        _emailSender.SendEmail(mail);
+                        foreach(var photoPath in photoFiles)
+                        {
+                            var mail = new Email(email, _emailSubject, _emailBody, photoPath);
+                            _emailSender.SendEmail(mail);
+                            _logger.LogInformation($"Email sent to {email} with photo {photoPath}.");
+                        }
                     }
                     else
                     {
@@ -64,7 +68,7 @@ namespace Photo_Dispatcher
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex, @$"DispatchPhotos failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                _logger.LogError(ex, $"DispatchPhotos failed - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
         }
 

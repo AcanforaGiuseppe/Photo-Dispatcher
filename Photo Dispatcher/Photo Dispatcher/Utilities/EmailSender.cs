@@ -61,7 +61,7 @@ namespace Photo_Dispatcher
                     smtp.Send(message);
                 }
 
-                _logger.LogInformation($"Email sent to {mail.To} with photo {mail.AttachmentPath}.");
+                _logger.LogInformation($"Sending Email to {mail.To} with photo {mail.AttachmentPath}");
             }
             catch(Exception ex)
             {
