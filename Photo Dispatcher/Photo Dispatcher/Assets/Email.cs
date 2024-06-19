@@ -1,29 +1,31 @@
 ﻿namespace Photo_Dispatcher
 {
+    // Model for email details
     public class Email
     {
-        public string To { get; set; }
-        public string Subject { get; set; }
-        public string Body { get; set; }
-        public string AttachmentPath { get; set; }
+        public string To { get; set; } // The recipient's email address
+        public string Subject { get; set; } // The subject of the email
+        public string Body { get; set; } // The body of the email
+        public List<string> AttachmentPaths { get; set; } // The paths to the attachments
 
-        public Email(string to, string subject, string body, string attachmentPath)
+        public Email(string to, string subject, string body, List<string> attachmentPaths)
         {
             To = to;
             Subject = subject;
             Body = body;
-            AttachmentPath = attachmentPath;
+            AttachmentPaths = attachmentPaths;
         }
     }
 
+    // Model for email settings configuration section
     public class EmailSettings
     {
-        public string FromName { get; set; }
-        public string SmtpServer { get; set; }
-        public int SmtpPort { get; set; }
-        public string SmtpUser { get; set; }
-        public string SmtpPass { get; set; }
-        public string EmailSubject { get; set; }
-        public string EmailBody { get; set; }
+        public string FromName { get; set; } // The display name for the sender
+        public string SmtpServer { get; set; } // The SMTP server address
+        public int SmtpPort { get; set; } // The SMTP server port
+        public string SmtpUser { get; set; } // The SMTP user name
+        public string SmtpPass { get; set; } // The SMTP password
+        public string EmailSubject { get; set; } // The default email subject
+        public string EmailBody { get; set; } // The default email body
     }
 }
