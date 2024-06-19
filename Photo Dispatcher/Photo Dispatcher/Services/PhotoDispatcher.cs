@@ -38,29 +38,36 @@ namespace Photo_Dispatcher
                 _logger.LogInformation("Dispatching photos...");
 
                 var passEmailMap = _csvLoader.LoadPassEmailMap(csvFilePath);
+                var allFiles = Directory.GetFiles(_photosDirectory);
+
+                _logger.LogInformation($"Found {allFiles.Length} files in the directory.");
 
                 foreach(var entry in passEmailMap)
                 {
-                    string passNumber = entry.Key;
+                    string[] passNumbers = entry.Key.Split('/');
                     string email = entry.Value;
-                    var regex = new Regex($@"(?<!\d){Regex.Escape(passNumber)}(?!\d)", RegexOptions.IgnoreCase);
 
-                    var photoFiles = Directory.GetFiles(_photosDirectory)
-                                              .Where(file => regex.IsMatch(Path.GetFileNameWithoutExtension(file)))
-                                              .ToArray();
+                    List<string> photoPaths = new List<string>();
 
-                    if(photoFiles.Length > 0)
+                    foreach(var passNumber in passNumbers)
                     {
-                        foreach(var photoPath in photoFiles)
-                        {
-                            var mail = new Email(email, _emailSubject, _emailBody, photoPath);
-                            _emailSender.SendEmail(mail);
-                            _logger.LogInformation($"Email sent to {email} with photo {photoPath}.");
-                        }
+                        var regex = new Regex($@"(?<!\d){Regex.Escape(passNumber)}(?!\d)", RegexOptions.IgnoreCase);
+
+                        var matchedFiles = allFiles
+                                        .Where(file => regex.IsMatch(Path.GetFileNameWithoutExtension(file)))
+                                        .ToArray();
+
+                        if(matchedFiles.Length > 0)
+                            photoPaths.AddRange(matchedFiles);
+                        else
+                            _logger.LogWarning($"Photo for pass number {passNumber} not found.");
                     }
-                    else
+
+                    if(photoPaths.Count > 0)
                     {
-                        _logger.LogWarning($"Photo for pass number {passNumber} not found.");
+                        var mail = new Email(email, _emailSubject, _emailBody, photoPaths);
+                        _emailSender.SendEmail(mail);
+                        _logger.LogInformation($"Email sent to {email} with photos {string.Join(", ", photoPaths)}.");
                     }
                 }
 

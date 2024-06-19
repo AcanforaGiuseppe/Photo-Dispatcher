@@ -55,13 +55,13 @@ namespace Photo_Dispatcher
                     Body = mail.Body
                 })
                 {
-                    if(!string.IsNullOrEmpty(mail.AttachmentPath))
-                        message.Attachments.Add(new Attachment(mail.AttachmentPath));
+                    foreach(var attachmentPath in mail.AttachmentPaths)
+                        message.Attachments.Add(new Attachment(attachmentPath));
 
                     smtp.Send(message);
                 }
 
-                _logger.LogInformation($"Sending Email to {mail.To} with photo {mail.AttachmentPath}");
+                _logger.LogInformation($"Sending Email to {mail.To} with photos: {string.Join(", ", mail.AttachmentPaths)}.");
             }
             catch(Exception ex)
             {
