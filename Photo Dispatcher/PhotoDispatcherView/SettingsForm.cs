@@ -7,7 +7,7 @@ namespace PhotoDispatcherView
 {
     public partial class SettingsForm : Form
     {
-        private string _configFilePath = Path.Combine(Path.GetDirectoryName(typeof(SettingsForm).Assembly.Location), "Shared\\appsettings.json");
+        private string _configFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Photo Dispatcher\appsettings.json"));
 
         public SettingsForm()
         {
@@ -39,6 +39,18 @@ namespace PhotoDispatcherView
             }
         }
 
+        //           BrowseCsvButton_Click
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using(var openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+
+                if(openFileDialog.ShowDialog() == DialogResult.OK)
+                    csvFilePathTextBox.Text = openFileDialog.FileName;
+            }
+        }
+
         //           SaveButton_Click
         private void button3_Click(object sender, EventArgs e)
         {
@@ -65,19 +77,15 @@ namespace PhotoDispatcherView
                 ["Paths"] = paths
             };
 
-            File.WriteAllText(_configFilePath, appSettings.ToString());
-            MessageBox.Show("Settings saved successfully.");
-        }
-
-        private void BrowseCsvButton_Click(object sender, EventArgs e)
-        {
-            using(var openFileDialog = new OpenFileDialog())
+            using(var fileStream = new FileStream(_configFilePath, FileMode.Create, FileAccess.Write))
             {
-                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
-
-                if(openFileDialog.ShowDialog() == DialogResult.OK)
-                    csvFilePathTextBox.Text = openFileDialog.FileName;
+                using(var streamWriter = new StreamWriter(fileStream))
+                {
+                    streamWriter.Write(appSettings.ToString());
+                }
             }
+
+            MessageBox.Show($"Settings saved successfully at {_configFilePath}");
         }
 
     }
