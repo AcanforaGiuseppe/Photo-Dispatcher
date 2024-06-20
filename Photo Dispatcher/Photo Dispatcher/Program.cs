@@ -2,13 +2,14 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Photo_Dispatcher;
 
-namespace PhotoDispatcher
+namespace Photo_Dispatcher
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        private static IConfiguration _configuration;
+
+        public static void Run()
         {
             // Create a new service collection for dependency injection
             var serviceCollection = new ServiceCollection();
@@ -19,7 +20,7 @@ namespace PhotoDispatcher
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             // Get the logger service and log that the application is starting
-            var logger = serviceProvider.GetService<ILogger<Program>>();
+            var logger = serviceProvider.GetService<ILogger<PhotoDispatch>>();
             logger.LogInformation("Application starting...");
 
             try
@@ -48,23 +49,23 @@ namespace PhotoDispatcher
         private static void ConfigureServices(IServiceCollection services)
         {
             // Build configuration
-            var configuration = new ConfigurationBuilder()
-                             .SetBasePath(Directory.GetCurrentDirectory()) // Set the base path to the current directory
-                             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) // Add the JSON configuration file
+            _configuration = new ConfigurationBuilder()
+                             .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location)) // Set the base path to the current directory
+                             .AddJsonFile("Shared\\appsettings.json", optional: false, reloadOnChange: true) // Add the JSON configuration file
                              .Build(); // Build the configuration
 
             // Register the configuration as a singleton service
-            services.AddSingleton(configuration);
+            services.AddSingleton(_configuration);
 
             // Configure logging to use the console
             services.AddLogging(configure => configure.AddConsole())
                     .AddTransient<EmailSender>() // Register EmailSender as a transient service
                     .AddTransient<CsvLoader>() // Register CsvLoader as a transient service
-                    .AddTransient<PhotoDispatch>(); // Register PhotoDispatch as a transient service
+                    .AddTransient<PhotoDispatch>();  // Register PhotoDispatch as a transient service
 
             // Bind configuration sections to options
-            services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
-            services.Configure<Paths>(configuration.GetSection("Paths"));
+            services.Configure<EmailSettings>(_configuration.GetSection("EmailSettings"));
+            services.Configure<Paths>(_configuration.GetSection("Paths"));
         }
 
     }
