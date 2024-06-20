@@ -5,11 +5,11 @@ using Microsoft.Extensions.Options;
 
 namespace Photo_Dispatcher
 {
-    public static class Program
+    static class Program
     {
         private static IConfiguration _configuration;
 
-        public static void Run()
+        static void Main(string[] args)
         {
             // Create a new service collection for dependency injection
             var serviceCollection = new ServiceCollection();
@@ -51,7 +51,7 @@ namespace Photo_Dispatcher
             // Build configuration
             _configuration = new ConfigurationBuilder()
                              .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location)) // Set the base path to the current directory
-                             .AddJsonFile("Shared\\appsettings.json", optional: false, reloadOnChange: true) // Add the JSON configuration file
+                             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) // Add the JSON configuration file
                              .Build(); // Build the configuration
 
             // Register the configuration as a singleton service
