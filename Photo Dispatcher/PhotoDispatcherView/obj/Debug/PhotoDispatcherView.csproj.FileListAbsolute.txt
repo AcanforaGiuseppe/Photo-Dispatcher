@@ -1,0 +1,13 @@
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\bin\Debug\PhotoDispatcherView.exe.config
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\bin\Debug\PhotoDispatcherView.exe
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\bin\Debug\PhotoDispatcherView.pdb
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\bin\Debug\Newtonsoft.Json.dll
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\bin\Debug\Newtonsoft.Json.xml
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.csproj.AssemblyReference.cache
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.SettingsForm.resources
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.Properties.Resources.resources
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.csproj.GenerateResource.cache
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.csproj.CoreCompileInputs.cache
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDis.B738F0EB.Up2Date
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.exe
+F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\PhotoDispatcherView\obj\Debug\PhotoDispatcherView.pdb
