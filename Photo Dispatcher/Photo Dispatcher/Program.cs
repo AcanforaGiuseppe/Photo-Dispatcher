@@ -50,9 +50,9 @@ namespace Photo_Dispatcher
         {
             // Build configuration
             _configuration = new ConfigurationBuilder()
-                             .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location)) // Set the base path to the current directory
-                             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) // Add the JSON configuration file
-                             .Build(); // Build the configuration
+                          .SetBasePath(Path.GetDirectoryName(typeof(Program).Assembly.Location)) // Set the base path to the current directory
+                          .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) // Add the JSON configuration file
+                          .Build(); // Build the configuration
 
             // Register the configuration as a singleton service
             services.AddSingleton(_configuration);
