@@ -7,7 +7,7 @@ namespace PhotoDispatcherView
 {
     public partial class SettingsForm : Form
     {
-        private string _configFilePath = "appsettings.json";
+        private string _configFilePath = Path.Combine(Path.GetDirectoryName(typeof(SettingsForm).Assembly.Location), "Shared\\appsettings.json");
 
         public SettingsForm()
         {
