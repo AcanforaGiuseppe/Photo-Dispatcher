@@ -86,6 +86,8 @@ namespace PhotoDispatcherView
             }
 
             MessageBox.Show($"Settings saved successfully at {_configFilePath}");
+
+            Application.Exit();
         }
 
     }
