@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoDispatcher", "Photo Dispatcher\PhotoDispatcher.csproj", "{B22D8E05-CD4B-40E1-9FB6-3991A4B84B0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoDispatcherView", "PhotoDispatcherView\PhotoDispatcherView.csproj", "{2F6C76E6-B875-4AE3-B07E-AA4568C81088}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B22D8E05-CD4B-40E1-9FB6-3991A4B84B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B22D8E05-CD4B-40E1-9FB6-3991A4B84B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B22D8E05-CD4B-40E1-9FB6-3991A4B84B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6C76E6-B875-4AE3-B07E-AA4568C81088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6C76E6-B875-4AE3-B07E-AA4568C81088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6C76E6-B875-4AE3-B07E-AA4568C81088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6C76E6-B875-4AE3-B07E-AA4568C81088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
