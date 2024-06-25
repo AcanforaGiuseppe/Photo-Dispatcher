@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace PhotoDispatcherView
 
         public SettingsForm()
         {
+            ClearAppSettingsFile();
             InitializeComponent();
             InitializeTooltips();
         }
@@ -148,7 +150,89 @@ namespace PhotoDispatcherView
 
             MessageBox.Show($"Settings saved successfully at {_configFilePath}");
 
+            LaunchPhotoDispatcherMainProject();
+
             Application.Exit();
+        }
+
+        private void LaunchPhotoDispatcherMainProject()
+        {
+            // Define the paths
+            string solutionDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
+            string projectFilePath = Path.Combine(solutionDirectory, @"Photo Dispatcher\PhotoDispatcher.csproj");
+            string otherProjectExePath = Path.Combine(solutionDirectory, @"Photo Dispatcher\bin\Debug\net8.0\PhotoDispatcher.exe");
+
+            // Debug: Verify the solution and project file paths
+            MessageBox.Show($"Solution directory: {solutionDirectory}\nProject file path: {projectFilePath}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Build the project
+            Process buildProcess = new Process();
+            buildProcess.StartInfo.FileName = "dotnet";
+            buildProcess.StartInfo.Arguments = $"build \"{projectFilePath}\"";
+            buildProcess.StartInfo.WorkingDirectory = solutionDirectory;
+            buildProcess.StartInfo.RedirectStandardOutput = true;
+            buildProcess.StartInfo.RedirectStandardError = true;
+            buildProcess.StartInfo.UseShellExecute = false;
+            buildProcess.StartInfo.CreateNoWindow = true;
+
+            buildProcess.Start();
+
+            // Read the output and error streams
+            string buildOutput = buildProcess.StandardOutput.ReadToEnd();
+            string buildError = buildProcess.StandardError.ReadToEnd();
+
+            buildProcess.WaitForExit();
+
+            // Debug: Verify build output and error streams
+            MessageBox.Show($"Build output:\n{buildOutput}\n\nBuild error:\n{buildError}", "Build Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Check for build errors
+            if(buildProcess.ExitCode != 0)
+            {
+                MessageBox.Show($"Build failed with exit code {buildProcess.ExitCode}.\n\nError Details:\n{buildError}", "Build Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Debug: Verify that the executable path is correct
+            MessageBox.Show($"Executable path: {otherProjectExePath}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Launch the executable if it exists
+            if(File.Exists(otherProjectExePath))
+                Process.Start(otherProjectExePath);
+            else
+                MessageBox.Show("The main project executable was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
+        // Clears appsettings.json file
+        private void ClearAppSettingsFile()
+        {
+            var emptyAppSettings = new JObject
+            {
+                ["EmailSettings"] = new JObject
+                {
+                    ["FromName"] = "",
+                    ["SmtpServer"] = "",
+                    ["SmtpPort"] = 0,
+                    ["SmtpUser"] = "",
+                    ["SmtpPass"] = "",
+                    ["EmailSubject"] = "",
+                    ["EmailBody"] = ""
+                },
+                ["Paths"] = new JObject
+                {
+                    ["PhotosDirectory"] = "",
+                    ["CsvFilePath"] = ""
+                }
+            };
+
+            using(var fileStream = new FileStream(_configFilePath, FileMode.Create, FileAccess.Write))
+            {
+                using(var streamWriter = new StreamWriter(fileStream))
+                {
+                    streamWriter.Write(emptyAppSettings.ToString());
+                }
+            }
         }
 
     }
