@@ -20,13 +20,58 @@ namespace PhotoDispatcherView
         private void label1_Click(object sender, EventArgs e)
         { }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        { }
+
+        private void label3_Click(object sender, EventArgs e)
+        { }
+
+        private void label4_Click(object sender, EventArgs e)
+        { }
+
+        private void label5_Click(object sender, EventArgs e)
+        { }
+
+        private void label6_Click(object sender, EventArgs e)
+        { }
+
+        private void label7_Click(object sender, EventArgs e)
         { }
 
         private void label8_Click(object sender, EventArgs e)
         { }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label9_Click(object sender, EventArgs e)
+        { }
+
+        private void label10_Click(object sender, EventArgs e)
+        { }
+
+        private void fromNameTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void smtpServerTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void smtpPortTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void smtpUserTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void smtpPassTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void emailSubjectTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void emailBodyTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void csvFilePathTextBox_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void photosDirectoryTextBox_TextChanged(object sender, EventArgs e)
         { }
 
         //           BrowsePhotosButton_Click

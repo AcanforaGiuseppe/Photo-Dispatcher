@@ -67,14 +67,15 @@
             this.photosDirectoryTextBox.Location = new System.Drawing.Point(146, 43);
             this.photosDirectoryTextBox.Name = "photosDirectoryTextBox";
             this.photosDirectoryTextBox.Size = new System.Drawing.Size(510, 20);
-            this.photosDirectoryTextBox.TabIndex = 1;
+            this.photosDirectoryTextBox.TabIndex = 0;
+            this.photosDirectoryTextBox.TextChanged += new System.EventHandler(this.photosDirectoryTextBox_TextChanged);
             // 
             // BrowsePhotosButton
             // 
             this.BrowsePhotosButton.Location = new System.Drawing.Point(671, 40);
             this.BrowsePhotosButton.Name = "BrowsePhotosButton";
             this.BrowsePhotosButton.Size = new System.Drawing.Size(75, 23);
-            this.BrowsePhotosButton.TabIndex = 2;
+            this.BrowsePhotosButton.TabIndex = 1;
             this.BrowsePhotosButton.Text = "Browse";
             this.BrowsePhotosButton.UseVisualStyleBackColor = true;
             this.BrowsePhotosButton.Click += new System.EventHandler(this.button1_Click);
@@ -97,6 +98,7 @@
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "EmailSubject";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -106,6 +108,7 @@
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "SmtpPass";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -115,6 +118,7 @@
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "SmtpUser";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -124,6 +128,7 @@
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "SmtpPort";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -133,6 +138,7 @@
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "SmtpServer";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -159,14 +165,15 @@
             this.csvFilePathTextBox.Location = new System.Drawing.Point(146, 69);
             this.csvFilePathTextBox.Name = "csvFilePathTextBox";
             this.csvFilePathTextBox.Size = new System.Drawing.Size(510, 20);
-            this.csvFilePathTextBox.TabIndex = 11;
+            this.csvFilePathTextBox.TabIndex = 2;
+            this.csvFilePathTextBox.TextChanged += new System.EventHandler(this.csvFilePathTextBox_TextChanged);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(671, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Browse";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -176,7 +183,7 @@
             this.SaveButton.Location = new System.Drawing.Point(290, 482);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(257, 43);
-            this.SaveButton.TabIndex = 13;
+            this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.button3_Click);
@@ -189,55 +196,64 @@
             this.label10.Size = new System.Drawing.Size(112, 13);
             this.label10.TabIndex = 14;
             this.label10.Text = "Email Service Settings";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // smtpPortTextBox
             // 
             this.smtpPortTextBox.Location = new System.Drawing.Point(114, 235);
             this.smtpPortTextBox.Name = "smtpPortTextBox";
             this.smtpPortTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpPortTextBox.TabIndex = 15;
+            this.smtpPortTextBox.TabIndex = 6;
+            this.smtpPortTextBox.TextChanged += new System.EventHandler(this.smtpPortTextBox_TextChanged);
             // 
             // smtpServerTextBox
             // 
             this.smtpServerTextBox.Location = new System.Drawing.Point(114, 209);
             this.smtpServerTextBox.Name = "smtpServerTextBox";
             this.smtpServerTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpServerTextBox.TabIndex = 16;
+            this.smtpServerTextBox.TabIndex = 5;
+            this.smtpServerTextBox.TextChanged += new System.EventHandler(this.smtpServerTextBox_TextChanged);
             // 
             // fromNameTextBox
             // 
             this.fromNameTextBox.Location = new System.Drawing.Point(114, 183);
             this.fromNameTextBox.Name = "fromNameTextBox";
             this.fromNameTextBox.Size = new System.Drawing.Size(278, 20);
-            this.fromNameTextBox.TabIndex = 17;
+            this.fromNameTextBox.TabIndex = 4;
+            this.fromNameTextBox.TextChanged += new System.EventHandler(this.fromNameTextBox_TextChanged);
             // 
             // smtpPassTextBox
             // 
             this.smtpPassTextBox.Location = new System.Drawing.Point(114, 287);
             this.smtpPassTextBox.Name = "smtpPassTextBox";
+            this.smtpPassTextBox.PasswordChar = '*';
             this.smtpPassTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpPassTextBox.TabIndex = 18;
+            this.smtpPassTextBox.TabIndex = 8;
+            this.smtpPassTextBox.TextChanged += new System.EventHandler(this.smtpPassTextBox_TextChanged);
             // 
             // smtpUserTextBox
             // 
             this.smtpUserTextBox.Location = new System.Drawing.Point(114, 261);
             this.smtpUserTextBox.Name = "smtpUserTextBox";
             this.smtpUserTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpUserTextBox.TabIndex = 19;
+            this.smtpUserTextBox.TabIndex = 7;
+            this.smtpUserTextBox.TextChanged += new System.EventHandler(this.smtpUserTextBox_TextChanged);
             // 
             // emailSubjectTextBox
             // 
             this.emailSubjectTextBox.Location = new System.Drawing.Point(114, 378);
             this.emailSubjectTextBox.Name = "emailSubjectTextBox";
             this.emailSubjectTextBox.Size = new System.Drawing.Size(542, 20);
-            this.emailSubjectTextBox.TabIndex = 20;
+            this.emailSubjectTextBox.TabIndex = 9;
+            this.emailSubjectTextBox.TextChanged += new System.EventHandler(this.emailSubjectTextBox_TextChanged);
             // 
             // emailBodyTextBox
             // 
             this.emailBodyTextBox.Location = new System.Drawing.Point(114, 404);
             this.emailBodyTextBox.Name = "emailBodyTextBox";
             this.emailBodyTextBox.Size = new System.Drawing.Size(542, 20);
-            this.emailBodyTextBox.TabIndex = 21;
+            this.emailBodyTextBox.TabIndex = 10;
+            this.emailBodyTextBox.TextChanged += new System.EventHandler(this.emailBodyTextBox_TextChanged);
             // 
             // SettingsForm
             // 
