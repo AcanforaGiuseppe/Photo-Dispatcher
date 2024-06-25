@@ -8,10 +8,12 @@ namespace PhotoDispatcherView
     public partial class SettingsForm : Form
     {
         private string _configFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Photo Dispatcher\appsettings.json"));
+        private ToolTip toolTip;
 
         public SettingsForm()
         {
             InitializeComponent();
+            InitializeTooltips();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -73,6 +75,20 @@ namespace PhotoDispatcherView
 
         private void photosDirectoryTextBox_TextChanged(object sender, EventArgs e)
         { }
+
+        private void InitializeTooltips()
+        {
+            toolTip = new ToolTip();
+            toolTip.SetToolTip(this.photosDirectoryLabel, "The directory where photos are stored.");
+            toolTip.SetToolTip(this.csvFilePathLabel, "The path to the CSV file containing email mappings.");
+            toolTip.SetToolTip(this.fromNameLabel, "The displayed name of the email sender.");
+            toolTip.SetToolTip(this.smtpServerLabel, "The address of the SMTP server.");
+            toolTip.SetToolTip(this.smtpPortLabel, "The port number used for the SMTP server.");
+            toolTip.SetToolTip(this.smtpUserLabel, "The email address of the account.");
+            toolTip.SetToolTip(this.smtpPassLabel, "The email account password.");
+            toolTip.SetToolTip(this.emailSubjectLabel, "The subject line of the email.");
+            toolTip.SetToolTip(this.emailBodyLabel, "The body text of the email.");
+        }
 
         //           BrowsePhotosButton_Click
         private void button1_Click(object sender, EventArgs e)
