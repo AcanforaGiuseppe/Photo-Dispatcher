@@ -29,6 +29,8 @@ namespace Photo_Dispatcher
 
             try
             {
+                _logger.LogInformation($"Attempting to load CSV file from path: {csvFilePath}");
+
                 using(var reader = new StreamReader(csvFilePath))
                 {
                     using(var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
@@ -36,7 +38,9 @@ namespace Photo_Dispatcher
                         var records = csv.GetRecords<CsvRecord>();
 
                         foreach(var record in records)
+                        {
                             passEmailMap[record.PassNumber] = record.Email;
+                        }
                     }
                 }
 
