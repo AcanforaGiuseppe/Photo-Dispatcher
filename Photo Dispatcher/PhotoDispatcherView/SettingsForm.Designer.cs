@@ -56,7 +56,7 @@
             // photosDirectoryLabel
             // 
             this.photosDirectoryLabel.AutoSize = true;
-            this.photosDirectoryLabel.Location = new System.Drawing.Point(30, 50);
+            this.photosDirectoryLabel.Location = new System.Drawing.Point(12, 50);
             this.photosDirectoryLabel.Name = "photosDirectoryLabel";
             this.photosDirectoryLabel.Size = new System.Drawing.Size(85, 13);
             this.photosDirectoryLabel.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             // photosDirectoryTextBox
             // 
-            this.photosDirectoryTextBox.Location = new System.Drawing.Point(146, 43);
+            this.photosDirectoryTextBox.Location = new System.Drawing.Point(114, 43);
             this.photosDirectoryTextBox.Name = "photosDirectoryTextBox";
             this.photosDirectoryTextBox.Size = new System.Drawing.Size(510, 20);
             this.photosDirectoryTextBox.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             // BrowsePhotosButton
             // 
-            this.BrowsePhotosButton.Location = new System.Drawing.Point(671, 40);
+            this.BrowsePhotosButton.Location = new System.Drawing.Point(656, 40);
             this.BrowsePhotosButton.Name = "BrowsePhotosButton";
             this.BrowsePhotosButton.Size = new System.Drawing.Size(75, 23);
             this.BrowsePhotosButton.TabIndex = 1;
@@ -84,86 +84,86 @@
             // emailBodyLabel
             // 
             this.emailBodyLabel.AutoSize = true;
-            this.emailBodyLabel.Location = new System.Drawing.Point(30, 363);
+            this.emailBodyLabel.Location = new System.Drawing.Point(12, 363);
             this.emailBodyLabel.Name = "emailBodyLabel";
-            this.emailBodyLabel.Size = new System.Drawing.Size(56, 13);
+            this.emailBodyLabel.Size = new System.Drawing.Size(59, 13);
             this.emailBodyLabel.TabIndex = 3;
-            this.emailBodyLabel.Text = "EmailBody";
+            this.emailBodyLabel.Text = "Email Body";
             this.emailBodyLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // emailSubjectLabel
             // 
             this.emailSubjectLabel.AutoSize = true;
-            this.emailSubjectLabel.Location = new System.Drawing.Point(30, 333);
+            this.emailSubjectLabel.Location = new System.Drawing.Point(12, 333);
             this.emailSubjectLabel.Name = "emailSubjectLabel";
-            this.emailSubjectLabel.Size = new System.Drawing.Size(68, 13);
+            this.emailSubjectLabel.Size = new System.Drawing.Size(71, 13);
             this.emailSubjectLabel.TabIndex = 4;
-            this.emailSubjectLabel.Text = "EmailSubject";
+            this.emailSubjectLabel.Text = "Email Subject";
             this.emailSubjectLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // smtpPassLabel
             // 
             this.smtpPassLabel.AutoSize = true;
-            this.smtpPassLabel.Location = new System.Drawing.Point(30, 303);
+            this.smtpPassLabel.Location = new System.Drawing.Point(12, 303);
             this.smtpPassLabel.Name = "smtpPassLabel";
-            this.smtpPassLabel.Size = new System.Drawing.Size(54, 13);
+            this.smtpPassLabel.Size = new System.Drawing.Size(86, 13);
             this.smtpPassLabel.TabIndex = 5;
-            this.smtpPassLabel.Text = "SmtpPass";
+            this.smtpPassLabel.Text = "SMTP Password";
             this.smtpPassLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // smtpUserLabel
             // 
             this.smtpUserLabel.AutoSize = true;
-            this.smtpUserLabel.Location = new System.Drawing.Point(30, 273);
+            this.smtpUserLabel.Location = new System.Drawing.Point(12, 273);
             this.smtpUserLabel.Name = "smtpUserLabel";
-            this.smtpUserLabel.Size = new System.Drawing.Size(53, 13);
+            this.smtpUserLabel.Size = new System.Drawing.Size(88, 13);
             this.smtpUserLabel.TabIndex = 6;
-            this.smtpUserLabel.Text = "SmtpUser";
+            this.smtpUserLabel.Text = "SMTP Username";
             this.smtpUserLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // smtpPortLabel
             // 
             this.smtpPortLabel.AutoSize = true;
-            this.smtpPortLabel.Location = new System.Drawing.Point(30, 243);
+            this.smtpPortLabel.Location = new System.Drawing.Point(12, 243);
             this.smtpPortLabel.Name = "smtpPortLabel";
-            this.smtpPortLabel.Size = new System.Drawing.Size(50, 13);
+            this.smtpPortLabel.Size = new System.Drawing.Size(59, 13);
             this.smtpPortLabel.TabIndex = 7;
-            this.smtpPortLabel.Text = "SmtpPort";
+            this.smtpPortLabel.Text = "SMTP Port";
             this.smtpPortLabel.Click += new System.EventHandler(this.label6_Click);
             // 
             // smtpServerLabel
             // 
             this.smtpServerLabel.AutoSize = true;
-            this.smtpServerLabel.Location = new System.Drawing.Point(30, 213);
+            this.smtpServerLabel.Location = new System.Drawing.Point(12, 213);
             this.smtpServerLabel.Name = "smtpServerLabel";
-            this.smtpServerLabel.Size = new System.Drawing.Size(62, 13);
+            this.smtpServerLabel.Size = new System.Drawing.Size(71, 13);
             this.smtpServerLabel.TabIndex = 8;
-            this.smtpServerLabel.Text = "SmtpServer";
+            this.smtpServerLabel.Text = "SMTP Server";
             this.smtpServerLabel.Click += new System.EventHandler(this.label7_Click);
             // 
             // fromNameLabel
             // 
             this.fromNameLabel.AutoSize = true;
-            this.fromNameLabel.Location = new System.Drawing.Point(30, 183);
+            this.fromNameLabel.Location = new System.Drawing.Point(12, 183);
             this.fromNameLabel.Name = "fromNameLabel";
-            this.fromNameLabel.Size = new System.Drawing.Size(58, 13);
+            this.fromNameLabel.Size = new System.Drawing.Size(72, 13);
             this.fromNameLabel.TabIndex = 9;
-            this.fromNameLabel.Text = "FromName";
+            this.fromNameLabel.Text = "Sender Name";
             this.fromNameLabel.Click += new System.EventHandler(this.label8_Click);
             // 
             // csvFilePathLabel
             // 
             this.csvFilePathLabel.AutoSize = true;
-            this.csvFilePathLabel.Location = new System.Drawing.Point(30, 76);
+            this.csvFilePathLabel.Location = new System.Drawing.Point(12, 76);
             this.csvFilePathLabel.Name = "csvFilePathLabel";
-            this.csvFilePathLabel.Size = new System.Drawing.Size(69, 13);
+            this.csvFilePathLabel.Size = new System.Drawing.Size(72, 13);
             this.csvFilePathLabel.TabIndex = 10;
-            this.csvFilePathLabel.Text = "Csv File Path";
+            this.csvFilePathLabel.Text = "CSV File Path";
             this.csvFilePathLabel.Click += new System.EventHandler(this.label9_Click);
             // 
             // csvFilePathTextBox
             // 
-            this.csvFilePathTextBox.Location = new System.Drawing.Point(146, 69);
+            this.csvFilePathTextBox.Location = new System.Drawing.Point(114, 69);
             this.csvFilePathTextBox.Name = "csvFilePathTextBox";
             this.csvFilePathTextBox.Size = new System.Drawing.Size(510, 20);
             this.csvFilePathTextBox.TabIndex = 2;
@@ -171,7 +171,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(671, 66);
+            this.button2.Location = new System.Drawing.Point(656, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -262,7 +262,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(187)))), ((int)(((byte)(155)))));
-            this.ClientSize = new System.Drawing.Size(809, 558);
+            this.ClientSize = new System.Drawing.Size(756, 558);
             this.Controls.Add(this.emailBodyTextBox);
             this.Controls.Add(this.emailSubjectTextBox);
             this.Controls.Add(this.smtpUserTextBox);
@@ -287,6 +287,7 @@
             this.Controls.Add(this.photosDirectoryLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Photo Dispatcher: Settings Provider";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

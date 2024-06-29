@@ -15,6 +15,7 @@ namespace PhotoDispatcherView
         {
             ClearAppSettingsFile();
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeTooltips();
         }
 
