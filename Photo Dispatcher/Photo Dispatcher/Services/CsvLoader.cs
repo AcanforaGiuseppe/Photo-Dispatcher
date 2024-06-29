@@ -38,9 +38,7 @@ namespace Photo_Dispatcher
                         var records = csv.GetRecords<CsvRecord>();
 
                         foreach(var record in records)
-                        {
                             passEmailMap[record.PassNumber] = record.Email;
-                        }
                     }
                 }
 
