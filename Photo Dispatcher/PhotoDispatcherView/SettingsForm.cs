@@ -18,6 +18,7 @@ namespace PhotoDispatcherView
             InitializeTooltips();
         }
 
+        #region Empty Methods
         private void Form1_Load(object sender, EventArgs e)
         { }
 
@@ -77,6 +78,7 @@ namespace PhotoDispatcherView
 
         private void photosDirectoryTextBox_TextChanged(object sender, EventArgs e)
         { }
+        #endregion
 
         private void InitializeTooltips()
         {
@@ -174,13 +176,11 @@ namespace PhotoDispatcherView
             buildProcess.StartInfo.RedirectStandardError = true;
             buildProcess.StartInfo.UseShellExecute = false;
             buildProcess.StartInfo.CreateNoWindow = true;
-
             buildProcess.Start();
 
             // Read the output and error streams
             string buildOutput = buildProcess.StandardOutput.ReadToEnd();
             string buildError = buildProcess.StandardError.ReadToEnd();
-
             buildProcess.WaitForExit();
 
             // Debug: Verify build output and error streams
