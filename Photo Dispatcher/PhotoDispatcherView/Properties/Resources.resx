@@ -133,7 +133,7 @@
     <value>SMTP Port</value>
   </data>
   <data name="smtpUserLabel.Text.en" xml:space="preserve">
-    <value>SMTP Username</value>
+    <value>SMTP Email</value>
   </data>
   <data name="smtpPassLabel.Text.en" xml:space="preserve">
     <value>SMTP Password</value>
@@ -199,7 +199,7 @@
     <value>Porta SMTP</value>
   </data>
   <data name="smtpUserLabel.Text.it" xml:space="preserve">
-    <value>Nome utente SMTP</value>
+    <value>Email SMTP</value>
   </data>
   <data name="smtpPassLabel.Text.it" xml:space="preserve">
     <value>Password SMTP</value>

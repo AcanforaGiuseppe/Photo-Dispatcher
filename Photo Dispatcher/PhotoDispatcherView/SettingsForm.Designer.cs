@@ -118,9 +118,9 @@
             this.smtpUserLabel.AutoSize = true;
             this.smtpUserLabel.Location = new System.Drawing.Point(7, 273);
             this.smtpUserLabel.Name = "smtpUserLabel";
-            this.smtpUserLabel.Size = new System.Drawing.Size(88, 13);
+            this.smtpUserLabel.Size = new System.Drawing.Size(65, 13);
             this.smtpUserLabel.TabIndex = 6;
-            this.smtpUserLabel.Text = "SMTP Username";
+            this.smtpUserLabel.Text = "SMTP Email";
             this.smtpUserLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // smtpPortLabel

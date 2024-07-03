@@ -439,7 +439,7 @@ namespace PhotoDispatcherView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SMTP Username.
+        ///   Looks up a localized string similar to SMTP Email.
         /// </summary>
         internal static string smtpUserLabel_Text_en {
             get {
@@ -448,7 +448,7 @@ namespace PhotoDispatcherView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nome utente SMTP.
+        ///   Looks up a localized string similar to Email SMTP.
         /// </summary>
         internal static string smtpUserLabel_Text_it {
             get {
