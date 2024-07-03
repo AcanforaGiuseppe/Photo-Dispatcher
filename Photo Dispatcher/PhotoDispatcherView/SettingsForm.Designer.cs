@@ -51,14 +51,14 @@
             this.smtpUserTextBox = new System.Windows.Forms.TextBox();
             this.emailSubjectTextBox = new System.Windows.Forms.TextBox();
             this.emailBodyTextBox = new System.Windows.Forms.TextBox();
-            this.languageSelector = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.languageLabel = new System.Windows.Forms.Label();
+            this.languageComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // photosDirectoryLabel
             // 
             this.photosDirectoryLabel.AutoSize = true;
-            this.photosDirectoryLabel.Location = new System.Drawing.Point(12, 50);
+            this.photosDirectoryLabel.Location = new System.Drawing.Point(7, 50);
             this.photosDirectoryLabel.Name = "photosDirectoryLabel";
             this.photosDirectoryLabel.Size = new System.Drawing.Size(85, 13);
             this.photosDirectoryLabel.TabIndex = 0;
@@ -75,9 +75,9 @@
             // 
             // BrowsePhotosButton
             // 
-            this.BrowsePhotosButton.Location = new System.Drawing.Point(656, 40);
+            this.BrowsePhotosButton.Location = new System.Drawing.Point(642, 40);
             this.BrowsePhotosButton.Name = "BrowsePhotosButton";
-            this.BrowsePhotosButton.Size = new System.Drawing.Size(75, 23);
+            this.BrowsePhotosButton.Size = new System.Drawing.Size(87, 23);
             this.BrowsePhotosButton.TabIndex = 2;
             this.BrowsePhotosButton.Text = "Browse";
             this.BrowsePhotosButton.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             // emailBodyLabel
             // 
             this.emailBodyLabel.AutoSize = true;
-            this.emailBodyLabel.Location = new System.Drawing.Point(12, 363);
+            this.emailBodyLabel.Location = new System.Drawing.Point(7, 363);
             this.emailBodyLabel.Name = "emailBodyLabel";
             this.emailBodyLabel.Size = new System.Drawing.Size(59, 13);
             this.emailBodyLabel.TabIndex = 3;
@@ -96,7 +96,7 @@
             // emailSubjectLabel
             // 
             this.emailSubjectLabel.AutoSize = true;
-            this.emailSubjectLabel.Location = new System.Drawing.Point(12, 333);
+            this.emailSubjectLabel.Location = new System.Drawing.Point(7, 333);
             this.emailSubjectLabel.Name = "emailSubjectLabel";
             this.emailSubjectLabel.Size = new System.Drawing.Size(71, 13);
             this.emailSubjectLabel.TabIndex = 4;
@@ -106,7 +106,7 @@
             // smtpPassLabel
             // 
             this.smtpPassLabel.AutoSize = true;
-            this.smtpPassLabel.Location = new System.Drawing.Point(12, 303);
+            this.smtpPassLabel.Location = new System.Drawing.Point(7, 303);
             this.smtpPassLabel.Name = "smtpPassLabel";
             this.smtpPassLabel.Size = new System.Drawing.Size(86, 13);
             this.smtpPassLabel.TabIndex = 5;
@@ -116,7 +116,7 @@
             // smtpUserLabel
             // 
             this.smtpUserLabel.AutoSize = true;
-            this.smtpUserLabel.Location = new System.Drawing.Point(12, 273);
+            this.smtpUserLabel.Location = new System.Drawing.Point(7, 273);
             this.smtpUserLabel.Name = "smtpUserLabel";
             this.smtpUserLabel.Size = new System.Drawing.Size(88, 13);
             this.smtpUserLabel.TabIndex = 6;
@@ -126,7 +126,7 @@
             // smtpPortLabel
             // 
             this.smtpPortLabel.AutoSize = true;
-            this.smtpPortLabel.Location = new System.Drawing.Point(12, 243);
+            this.smtpPortLabel.Location = new System.Drawing.Point(7, 243);
             this.smtpPortLabel.Name = "smtpPortLabel";
             this.smtpPortLabel.Size = new System.Drawing.Size(59, 13);
             this.smtpPortLabel.TabIndex = 7;
@@ -136,7 +136,7 @@
             // smtpServerLabel
             // 
             this.smtpServerLabel.AutoSize = true;
-            this.smtpServerLabel.Location = new System.Drawing.Point(12, 213);
+            this.smtpServerLabel.Location = new System.Drawing.Point(7, 213);
             this.smtpServerLabel.Name = "smtpServerLabel";
             this.smtpServerLabel.Size = new System.Drawing.Size(71, 13);
             this.smtpServerLabel.TabIndex = 8;
@@ -146,7 +146,7 @@
             // fromNameLabel
             // 
             this.fromNameLabel.AutoSize = true;
-            this.fromNameLabel.Location = new System.Drawing.Point(12, 183);
+            this.fromNameLabel.Location = new System.Drawing.Point(7, 183);
             this.fromNameLabel.Name = "fromNameLabel";
             this.fromNameLabel.Size = new System.Drawing.Size(72, 13);
             this.fromNameLabel.TabIndex = 9;
@@ -156,7 +156,7 @@
             // csvFilePathLabel
             // 
             this.csvFilePathLabel.AutoSize = true;
-            this.csvFilePathLabel.Location = new System.Drawing.Point(12, 76);
+            this.csvFilePathLabel.Location = new System.Drawing.Point(7, 76);
             this.csvFilePathLabel.Name = "csvFilePathLabel";
             this.csvFilePathLabel.Size = new System.Drawing.Size(72, 13);
             this.csvFilePathLabel.TabIndex = 10;
@@ -173,9 +173,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(656, 66);
+            this.button2.Location = new System.Drawing.Point(642, 66);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(87, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "Browse";
             this.button2.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(263, 480);
+            this.SaveButton.Location = new System.Drawing.Point(246, 481);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(257, 43);
             this.SaveButton.TabIndex = 12;
@@ -194,7 +194,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(195, 152);
+            this.label10.Location = new System.Drawing.Point(191, 151);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 13);
             this.label10.TabIndex = 14;
@@ -255,36 +255,41 @@
             this.emailBodyTextBox.Location = new System.Drawing.Point(114, 360);
             this.emailBodyTextBox.Multiline = true;
             this.emailBodyTextBox.Name = "emailBodyTextBox";
+            this.emailBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.emailBodyTextBox.Size = new System.Drawing.Size(542, 100);
             this.emailBodyTextBox.TabIndex = 11;
             this.emailBodyTextBox.TextChanged += new System.EventHandler(this.emailBodyTextBox_TextChanged);
             // 
-            // languageSelector
+            // languageLabel
             // 
-            this.languageSelector.FormattingEnabled = true;
-            this.languageSelector.Location = new System.Drawing.Point(695, 12);
-            this.languageSelector.Name = "languageSelector";
-            this.languageSelector.Size = new System.Drawing.Size(49, 21);
-            this.languageSelector.TabIndex = 0;
-            this.languageSelector.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.languageLabel.AutoSize = true;
+            this.languageLabel.Location = new System.Drawing.Point(7, 20);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(55, 13);
+            this.languageLabel.TabIndex = 16;
+            this.languageLabel.Text = "Language";
+            this.languageLabel.Click += new System.EventHandler(this.languageLabel_Click);
             // 
-            // label1
+            // languageComboBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(620, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Language";
+            this.languageComboBox.FormattingEnabled = true;
+            this.languageComboBox.Items.AddRange(new object[] {
+            "English",
+            "Italiano"});
+            this.languageComboBox.Location = new System.Drawing.Point(114, 17);
+            this.languageComboBox.Name = "languageComboBox";
+            this.languageComboBox.Size = new System.Drawing.Size(124, 21);
+            this.languageComboBox.TabIndex = 0;
+            this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged_1);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(187)))), ((int)(((byte)(155)))));
-            this.ClientSize = new System.Drawing.Size(756, 558);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.languageSelector);
+            this.ClientSize = new System.Drawing.Size(748, 546);
+            this.Controls.Add(this.languageComboBox);
+            this.Controls.Add(this.languageLabel);
             this.Controls.Add(this.emailBodyTextBox);
             this.Controls.Add(this.emailSubjectTextBox);
             this.Controls.Add(this.smtpUserTextBox);
@@ -341,7 +346,7 @@
         private System.Windows.Forms.TextBox smtpUserTextBox;
         private System.Windows.Forms.TextBox emailSubjectTextBox;
         private System.Windows.Forms.TextBox emailBodyTextBox;
-        private System.Windows.Forms.ComboBox languageSelector;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label languageLabel;
+        private System.Windows.Forms.ComboBox languageComboBox;
     }
 }
