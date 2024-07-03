@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PhotoDispatcherView.Properties
-{
-
-
+namespace PhotoDispatcherView.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,458 @@ namespace PhotoDispatcherView.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PhotoDispatcherView.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
+        internal static string BrowsePhotosButton_Text_en {
+            get {
+                return ResourceManager.GetString("BrowsePhotosButton.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sfoglia.
+        /// </summary>
+        internal static string BrowsePhotosButton_Text_it {
+            get {
+                return ResourceManager.GetString("BrowsePhotosButton.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
+        internal static string button2_Text_en {
+            get {
+                return ResourceManager.GetString("button2.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sfoglia.
+        /// </summary>
+        internal static string button2_Text_it {
+            get {
+                return ResourceManager.GetString("button2.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CSV File Path.
+        /// </summary>
+        internal static string csvFilePathLabel_Text_en {
+            get {
+                return ResourceManager.GetString("csvFilePathLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percorso del file CSV.
+        /// </summary>
+        internal static string csvFilePathLabel_Text_it {
+            get {
+                return ResourceManager.GetString("csvFilePathLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to the CSV file containing email mappings..
+        /// </summary>
+        internal static string csvFilePathLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("csvFilePathLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il percorso del file CSV contenente le mappature delle email..
+        /// </summary>
+        internal static string csvFilePathLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("csvFilePathLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Body.
+        /// </summary>
+        internal static string emailBodyLabel_Text_en {
+            get {
+                return ResourceManager.GetString("emailBodyLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corpo dell&apos;email.
+        /// </summary>
+        internal static string emailBodyLabel_Text_it {
+            get {
+                return ResourceManager.GetString("emailBodyLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The body text of the email..
+        /// </summary>
+        internal static string emailBodyLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("emailBodyLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il testo del corpo dell&apos;email..
+        /// </summary>
+        internal static string emailBodyLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("emailBodyLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Subject.
+        /// </summary>
+        internal static string emailSubjectLabel_Text_en {
+            get {
+                return ResourceManager.GetString("emailSubjectLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oggetto dell&apos;email.
+        /// </summary>
+        internal static string emailSubjectLabel_Text_it {
+            get {
+                return ResourceManager.GetString("emailSubjectLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The subject line of the email..
+        /// </summary>
+        internal static string emailSubjectLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("emailSubjectLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La riga dell&apos;oggetto dell&apos;email..
+        /// </summary>
+        internal static string emailSubjectLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("emailSubjectLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sender Name.
+        /// </summary>
+        internal static string fromNameLabel_Text_en {
+            get {
+                return ResourceManager.GetString("fromNameLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome del mittente.
+        /// </summary>
+        internal static string fromNameLabel_Text_it {
+            get {
+                return ResourceManager.GetString("fromNameLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The displayed name of the email sender..
+        /// </summary>
+        internal static string fromNameLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("fromNameLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il nome visualizzato del mittente dell&apos;email..
+        /// </summary>
+        internal static string fromNameLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("fromNameLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Service Settings.
+        /// </summary>
+        internal static string label10_Text_en {
+            get {
+                return ResourceManager.GetString("label10.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impostazioni del servizio email.
+        /// </summary>
+        internal static string label10_Text_it {
+            get {
+                return ResourceManager.GetString("label10.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string languageLabel_Text_en {
+            get {
+                return ResourceManager.GetString("languageLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lingua.
+        /// </summary>
+        internal static string languageLabel_Text_it {
+            get {
+                return ResourceManager.GetString("languageLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photos Directory.
+        /// </summary>
+        internal static string photosDirectoryLabel_Text_en {
+            get {
+                return ResourceManager.GetString("photosDirectoryLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directory delle foto.
+        /// </summary>
+        internal static string photosDirectoryLabel_Text_it {
+            get {
+                return ResourceManager.GetString("photosDirectoryLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The directory where photos are stored..
+        /// </summary>
+        internal static string photosDirectoryLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("photosDirectoryLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La directory in cui sono archiviate le foto..
+        /// </summary>
+        internal static string photosDirectoryLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("photosDirectoryLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string SaveButton_Text_en {
+            get {
+                return ResourceManager.GetString("SaveButton.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salva.
+        /// </summary>
+        internal static string SaveButton_Text_it {
+            get {
+                return ResourceManager.GetString("SaveButton.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMTP Password.
+        /// </summary>
+        internal static string smtpPassLabel_Text_en {
+            get {
+                return ResourceManager.GetString("smtpPassLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password SMTP.
+        /// </summary>
+        internal static string smtpPassLabel_Text_it {
+            get {
+                return ResourceManager.GetString("smtpPassLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email account password..
+        /// </summary>
+        internal static string smtpPassLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("smtpPassLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La password dell&apos;account email..
+        /// </summary>
+        internal static string smtpPassLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("smtpPassLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMTP Port.
+        /// </summary>
+        internal static string smtpPortLabel_Text_en {
+            get {
+                return ResourceManager.GetString("smtpPortLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Porta SMTP.
+        /// </summary>
+        internal static string smtpPortLabel_Text_it {
+            get {
+                return ResourceManager.GetString("smtpPortLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The port number used for the SMTP server..
+        /// </summary>
+        internal static string smtpPortLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("smtpPortLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il numero di porta utilizzato per il server SMTP..
+        /// </summary>
+        internal static string smtpPortLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("smtpPortLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMTP Server.
+        /// </summary>
+        internal static string smtpServerLabel_Text_en {
+            get {
+                return ResourceManager.GetString("smtpServerLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server SMTP.
+        /// </summary>
+        internal static string smtpServerLabel_Text_it {
+            get {
+                return ResourceManager.GetString("smtpServerLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The address of the SMTP server..
+        /// </summary>
+        internal static string smtpServerLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("smtpServerLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L&apos;indirizzo del server SMTP..
+        /// </summary>
+        internal static string smtpServerLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("smtpServerLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SMTP Username.
+        /// </summary>
+        internal static string smtpUserLabel_Text_en {
+            get {
+                return ResourceManager.GetString("smtpUserLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nome utente SMTP.
+        /// </summary>
+        internal static string smtpUserLabel_Text_it {
+            get {
+                return ResourceManager.GetString("smtpUserLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email address of the account..
+        /// </summary>
+        internal static string smtpUserLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("smtpUserLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to L&apos;indirizzo email dell&apos;account..
+        /// </summary>
+        internal static string smtpUserLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("smtpUserLabel.ToolTip.it", resourceCulture);
             }
         }
     }

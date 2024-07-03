@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,147 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="photosDirectoryLabel.Text.en" xml:space="preserve">
+    <value>Photos Directory</value>
+  </data>
+  <data name="csvFilePathLabel.Text.en" xml:space="preserve">
+    <value>CSV File Path</value>
+  </data>
+  <data name="fromNameLabel.Text.en" xml:space="preserve">
+    <value>Sender Name</value>
+  </data>
+  <data name="smtpServerLabel.Text.en" xml:space="preserve">
+    <value>SMTP Server</value>
+  </data>
+  <data name="smtpPortLabel.Text.en" xml:space="preserve">
+    <value>SMTP Port</value>
+  </data>
+  <data name="smtpUserLabel.Text.en" xml:space="preserve">
+    <value>SMTP Username</value>
+  </data>
+  <data name="smtpPassLabel.Text.en" xml:space="preserve">
+    <value>SMTP Password</value>
+  </data>
+  <data name="emailSubjectLabel.Text.en" xml:space="preserve">
+    <value>Email Subject</value>
+  </data>
+  <data name="emailBodyLabel.Text.en" xml:space="preserve">
+    <value>Email Body</value>
+  </data>
+  <data name="label10.Text.en" xml:space="preserve">
+    <value>Email Service Settings</value>
+  </data>
+  <data name="SaveButton.Text.en" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="BrowsePhotosButton.Text.en" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="button2.Text.en" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="photosDirectoryLabel.ToolTip.en" xml:space="preserve">
+    <value>The directory where photos are stored.</value>
+  </data>
+  <data name="csvFilePathLabel.ToolTip.en" xml:space="preserve">
+    <value>The path to the CSV file containing email mappings.</value>
+  </data>
+  <data name="fromNameLabel.ToolTip.en" xml:space="preserve">
+    <value>The displayed name of the email sender.</value>
+  </data>
+  <data name="smtpServerLabel.ToolTip.en" xml:space="preserve">
+    <value>The address of the SMTP server.</value>
+  </data>
+  <data name="smtpPortLabel.ToolTip.en" xml:space="preserve">
+    <value>The port number used for the SMTP server.</value>
+  </data>
+  <data name="smtpUserLabel.ToolTip.en" xml:space="preserve">
+    <value>The email address of the account.</value>
+  </data>
+  <data name="smtpPassLabel.ToolTip.en" xml:space="preserve">
+    <value>The email account password.</value>
+  </data>
+  <data name="emailSubjectLabel.ToolTip.en" xml:space="preserve">
+    <value>The subject line of the email.</value>
+  </data>
+  <data name="emailBodyLabel.ToolTip.en" xml:space="preserve">
+    <value>The body text of the email.</value>
+  </data>
+  <data name="photosDirectoryLabel.Text.it" xml:space="preserve">
+    <value>Directory delle foto</value>
+  </data>
+  <data name="csvFilePathLabel.Text.it" xml:space="preserve">
+    <value>Percorso del file CSV</value>
+  </data>
+  <data name="fromNameLabel.Text.it" xml:space="preserve">
+    <value>Nome del mittente</value>
+  </data>
+  <data name="smtpServerLabel.Text.it" xml:space="preserve">
+    <value>Server SMTP</value>
+  </data>
+  <data name="smtpPortLabel.Text.it" xml:space="preserve">
+    <value>Porta SMTP</value>
+  </data>
+  <data name="smtpUserLabel.Text.it" xml:space="preserve">
+    <value>Nome utente SMTP</value>
+  </data>
+  <data name="smtpPassLabel.Text.it" xml:space="preserve">
+    <value>Password SMTP</value>
+  </data>
+  <data name="emailSubjectLabel.Text.it" xml:space="preserve">
+    <value>Oggetto dell'email</value>
+  </data>
+  <data name="emailBodyLabel.Text.it" xml:space="preserve">
+    <value>Corpo dell'email</value>
+  </data>
+  <data name="label10.Text.it" xml:space="preserve">
+    <value>Impostazioni del servizio email</value>
+  </data>
+  <data name="SaveButton.Text.it" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="BrowsePhotosButton.Text.it" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="button2.Text.it" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="photosDirectoryLabel.ToolTip.it" xml:space="preserve">
+    <value>La directory in cui sono archiviate le foto.</value>
+  </data>
+  <data name="csvFilePathLabel.ToolTip.it" xml:space="preserve">
+    <value>Il percorso del file CSV contenente le mappature delle email.</value>
+  </data>
+  <data name="fromNameLabel.ToolTip.it" xml:space="preserve">
+    <value>Il nome visualizzato del mittente dell'email.</value>
+  </data>
+  <data name="smtpServerLabel.ToolTip.it" xml:space="preserve">
+    <value>L'indirizzo del server SMTP.</value>
+  </data>
+  <data name="smtpPortLabel.ToolTip.it" xml:space="preserve">
+    <value>Il numero di porta utilizzato per il server SMTP.</value>
+  </data>
+  <data name="smtpUserLabel.ToolTip.it" xml:space="preserve">
+    <value>L'indirizzo email dell'account.</value>
+  </data>
+  <data name="smtpPassLabel.ToolTip.it" xml:space="preserve">
+    <value>La password dell'account email.</value>
+  </data>
+  <data name="emailSubjectLabel.ToolTip.it" xml:space="preserve">
+    <value>La riga dell'oggetto dell'email.</value>
+  </data>
+  <data name="emailBodyLabel.ToolTip.it" xml:space="preserve">
+    <value>Il testo del corpo dell'email.</value>
+  </data>
+  <data name="languageLabel.Text.en" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="languageLabel.Text.it" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
 </root>
