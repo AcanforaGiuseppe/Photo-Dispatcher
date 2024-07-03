@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace PhotoDispatcherView
@@ -10,18 +12,14 @@ namespace PhotoDispatcherView
     {
         private string _configFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Photo Dispatcher\appsettings.json"));
         private ToolTip toolTip;
+        private ResourceManager _resourceManager;
 
         public SettingsForm()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            InitializeTooltips();
-            InitializeComboBox();
         }
 
         #region Empty Methods
-        private void Form1_Load(object sender, EventArgs e)
-        { }
 
         private void label1_Click(object sender, EventArgs e)
         { }
@@ -79,25 +77,21 @@ namespace PhotoDispatcherView
 
         private void photosDirectoryTextBox_TextChanged(object sender, EventArgs e)
         { }
+
+        private void languageLabel_Click(object sender, EventArgs e)
+        { }
+
         #endregion
 
-        private void InitializeComboBox()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            // TO DO
-        }
+            this.StartPosition = FormStartPosition.CenterScreen;
 
-        private void InitializeTooltips()
-        {
             toolTip = new ToolTip();
-            toolTip.SetToolTip(this.photosDirectoryLabel, "The directory where photos are stored.");
-            toolTip.SetToolTip(this.csvFilePathLabel, "The path to the CSV file containing email mappings.");
-            toolTip.SetToolTip(this.fromNameLabel, "The displayed name of the email sender.");
-            toolTip.SetToolTip(this.smtpServerLabel, "The address of the SMTP server.");
-            toolTip.SetToolTip(this.smtpPortLabel, "The port number used for the SMTP server.");
-            toolTip.SetToolTip(this.smtpUserLabel, "The email address of the account.");
-            toolTip.SetToolTip(this.smtpPassLabel, "The email account password.");
-            toolTip.SetToolTip(this.emailSubjectLabel, "The subject line of the email.");
-            toolTip.SetToolTip(this.emailBodyLabel, "The body text of the email.");
+            _resourceManager = new ResourceManager("PhotoDispatcherView.Properties.Resources", typeof(SettingsForm).Assembly);
+
+            ApplyLanguage("en");
+            languageComboBox.SelectedIndex = 0;
         }
 
         //           BrowsePhotosButton_Click
@@ -209,10 +203,44 @@ namespace PhotoDispatcherView
                 MessageBox.Show("The main project executable was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        // Combobox Language Selector
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ApplyLanguage(string culture)
         {
-            // TO DO
+            var cultureInfo = new CultureInfo(culture);
+
+            // Labels
+            photosDirectoryLabel.Text = _resourceManager.GetString($"photosDirectoryLabel.Text.{culture}", cultureInfo);
+            csvFilePathLabel.Text = _resourceManager.GetString($"csvFilePathLabel.Text.{culture}", cultureInfo);
+            fromNameLabel.Text = _resourceManager.GetString($"fromNameLabel.Text.{culture}", cultureInfo);
+            smtpServerLabel.Text = _resourceManager.GetString($"smtpServerLabel.Text.{culture}", cultureInfo);
+            smtpPortLabel.Text = _resourceManager.GetString($"smtpPortLabel.Text.{culture}", cultureInfo);
+            smtpUserLabel.Text = _resourceManager.GetString($"smtpUserLabel.Text.{culture}", cultureInfo);
+            smtpPassLabel.Text = _resourceManager.GetString($"smtpPassLabel.Text.{culture}", cultureInfo);
+            emailSubjectLabel.Text = _resourceManager.GetString($"emailSubjectLabel.Text.{culture}", cultureInfo);
+            emailBodyLabel.Text = _resourceManager.GetString($"emailBodyLabel.Text.{culture}", cultureInfo);
+            label10.Text = _resourceManager.GetString($"label10.Text.{culture}", cultureInfo);
+            SaveButton.Text = _resourceManager.GetString($"SaveButton.Text.{culture}", cultureInfo);
+            BrowsePhotosButton.Text = _resourceManager.GetString($"BrowsePhotosButton.Text.{culture}", cultureInfo);
+            button2.Text = _resourceManager.GetString($"button2.Text.{culture}", cultureInfo);
+            languageLabel.Text = _resourceManager.GetString($"languageLabel.Text.{culture}", cultureInfo);
+
+            // Tooltips
+            toolTip.SetToolTip(this.photosDirectoryLabel, _resourceManager.GetString($"photosDirectoryLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.csvFilePathLabel, _resourceManager.GetString($"csvFilePathLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.fromNameLabel, _resourceManager.GetString($"fromNameLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.smtpServerLabel, _resourceManager.GetString($"smtpServerLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.smtpPortLabel, _resourceManager.GetString($"smtpPortLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.smtpUserLabel, _resourceManager.GetString($"smtpUserLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.smtpPassLabel, _resourceManager.GetString($"smtpPassLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.emailSubjectLabel, _resourceManager.GetString($"emailSubjectLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.emailBodyLabel, _resourceManager.GetString($"emailBodyLabel.ToolTip.{culture}", cultureInfo));
+        }
+
+        private void languageComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if(languageComboBox.SelectedItem.ToString() == "English")
+                ApplyLanguage("en");
+            else if(languageComboBox.SelectedItem.ToString() == "Italiano")
+                ApplyLanguage("it");
         }
 
     }
