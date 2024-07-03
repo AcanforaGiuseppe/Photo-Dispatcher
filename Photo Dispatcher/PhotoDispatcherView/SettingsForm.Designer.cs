@@ -51,6 +51,8 @@
             this.smtpUserTextBox = new System.Windows.Forms.TextBox();
             this.emailSubjectTextBox = new System.Windows.Forms.TextBox();
             this.emailBodyTextBox = new System.Windows.Forms.TextBox();
+            this.languageSelector = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // photosDirectoryLabel
@@ -68,7 +70,7 @@
             this.photosDirectoryTextBox.Location = new System.Drawing.Point(114, 43);
             this.photosDirectoryTextBox.Name = "photosDirectoryTextBox";
             this.photosDirectoryTextBox.Size = new System.Drawing.Size(510, 20);
-            this.photosDirectoryTextBox.TabIndex = 0;
+            this.photosDirectoryTextBox.TabIndex = 1;
             this.photosDirectoryTextBox.TextChanged += new System.EventHandler(this.photosDirectoryTextBox_TextChanged);
             // 
             // BrowsePhotosButton
@@ -76,7 +78,7 @@
             this.BrowsePhotosButton.Location = new System.Drawing.Point(656, 40);
             this.BrowsePhotosButton.Name = "BrowsePhotosButton";
             this.BrowsePhotosButton.Size = new System.Drawing.Size(75, 23);
-            this.BrowsePhotosButton.TabIndex = 1;
+            this.BrowsePhotosButton.TabIndex = 2;
             this.BrowsePhotosButton.Text = "Browse";
             this.BrowsePhotosButton.UseVisualStyleBackColor = true;
             this.BrowsePhotosButton.Click += new System.EventHandler(this.button1_Click);
@@ -166,7 +168,7 @@
             this.csvFilePathTextBox.Location = new System.Drawing.Point(114, 69);
             this.csvFilePathTextBox.Name = "csvFilePathTextBox";
             this.csvFilePathTextBox.Size = new System.Drawing.Size(510, 20);
-            this.csvFilePathTextBox.TabIndex = 2;
+            this.csvFilePathTextBox.TabIndex = 3;
             this.csvFilePathTextBox.TextChanged += new System.EventHandler(this.csvFilePathTextBox_TextChanged);
             // 
             // button2
@@ -174,7 +176,7 @@
             this.button2.Location = new System.Drawing.Point(656, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Browse";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -184,7 +186,7 @@
             this.SaveButton.Location = new System.Drawing.Point(263, 480);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(257, 43);
-            this.SaveButton.TabIndex = 11;
+            this.SaveButton.TabIndex = 12;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.button3_Click);
@@ -204,7 +206,7 @@
             this.smtpPortTextBox.Location = new System.Drawing.Point(114, 240);
             this.smtpPortTextBox.Name = "smtpPortTextBox";
             this.smtpPortTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpPortTextBox.TabIndex = 6;
+            this.smtpPortTextBox.TabIndex = 7;
             this.smtpPortTextBox.TextChanged += new System.EventHandler(this.smtpPortTextBox_TextChanged);
             // 
             // smtpServerTextBox
@@ -212,7 +214,7 @@
             this.smtpServerTextBox.Location = new System.Drawing.Point(114, 210);
             this.smtpServerTextBox.Name = "smtpServerTextBox";
             this.smtpServerTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpServerTextBox.TabIndex = 5;
+            this.smtpServerTextBox.TabIndex = 6;
             this.smtpServerTextBox.TextChanged += new System.EventHandler(this.smtpServerTextBox_TextChanged);
             // 
             // fromNameTextBox
@@ -220,7 +222,7 @@
             this.fromNameTextBox.Location = new System.Drawing.Point(114, 180);
             this.fromNameTextBox.Name = "fromNameTextBox";
             this.fromNameTextBox.Size = new System.Drawing.Size(278, 20);
-            this.fromNameTextBox.TabIndex = 4;
+            this.fromNameTextBox.TabIndex = 5;
             this.fromNameTextBox.TextChanged += new System.EventHandler(this.fromNameTextBox_TextChanged);
             // 
             // smtpPassTextBox
@@ -229,7 +231,7 @@
             this.smtpPassTextBox.Name = "smtpPassTextBox";
             this.smtpPassTextBox.PasswordChar = '*';
             this.smtpPassTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpPassTextBox.TabIndex = 8;
+            this.smtpPassTextBox.TabIndex = 9;
             this.smtpPassTextBox.TextChanged += new System.EventHandler(this.smtpPassTextBox_TextChanged);
             // 
             // smtpUserTextBox
@@ -237,7 +239,7 @@
             this.smtpUserTextBox.Location = new System.Drawing.Point(114, 270);
             this.smtpUserTextBox.Name = "smtpUserTextBox";
             this.smtpUserTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpUserTextBox.TabIndex = 7;
+            this.smtpUserTextBox.TabIndex = 8;
             this.smtpUserTextBox.TextChanged += new System.EventHandler(this.smtpUserTextBox_TextChanged);
             // 
             // emailSubjectTextBox
@@ -245,7 +247,7 @@
             this.emailSubjectTextBox.Location = new System.Drawing.Point(114, 330);
             this.emailSubjectTextBox.Name = "emailSubjectTextBox";
             this.emailSubjectTextBox.Size = new System.Drawing.Size(542, 20);
-            this.emailSubjectTextBox.TabIndex = 9;
+            this.emailSubjectTextBox.TabIndex = 10;
             this.emailSubjectTextBox.TextChanged += new System.EventHandler(this.emailSubjectTextBox_TextChanged);
             // 
             // emailBodyTextBox
@@ -254,8 +256,26 @@
             this.emailBodyTextBox.Multiline = true;
             this.emailBodyTextBox.Name = "emailBodyTextBox";
             this.emailBodyTextBox.Size = new System.Drawing.Size(542, 100);
-            this.emailBodyTextBox.TabIndex = 10;
+            this.emailBodyTextBox.TabIndex = 11;
             this.emailBodyTextBox.TextChanged += new System.EventHandler(this.emailBodyTextBox_TextChanged);
+            // 
+            // languageSelector
+            // 
+            this.languageSelector.FormattingEnabled = true;
+            this.languageSelector.Location = new System.Drawing.Point(695, 12);
+            this.languageSelector.Name = "languageSelector";
+            this.languageSelector.Size = new System.Drawing.Size(49, 21);
+            this.languageSelector.TabIndex = 0;
+            this.languageSelector.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(620, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Language";
             // 
             // SettingsForm
             // 
@@ -263,6 +283,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(187)))), ((int)(((byte)(155)))));
             this.ClientSize = new System.Drawing.Size(756, 558);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.languageSelector);
             this.Controls.Add(this.emailBodyTextBox);
             this.Controls.Add(this.emailSubjectTextBox);
             this.Controls.Add(this.smtpUserTextBox);
@@ -319,5 +341,7 @@
         private System.Windows.Forms.TextBox smtpUserTextBox;
         private System.Windows.Forms.TextBox emailSubjectTextBox;
         private System.Windows.Forms.TextBox emailBodyTextBox;
+        private System.Windows.Forms.ComboBox languageSelector;
+        private System.Windows.Forms.Label label1;
     }
 }

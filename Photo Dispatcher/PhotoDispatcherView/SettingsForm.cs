@@ -16,6 +16,7 @@ namespace PhotoDispatcherView
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeTooltips();
+            InitializeComboBox();
         }
 
         #region Empty Methods
@@ -79,6 +80,11 @@ namespace PhotoDispatcherView
         private void photosDirectoryTextBox_TextChanged(object sender, EventArgs e)
         { }
         #endregion
+
+        private void InitializeComboBox()
+        {
+            // TO DO
+        }
 
         private void InitializeTooltips()
         {
@@ -201,6 +207,12 @@ namespace PhotoDispatcherView
                 Process.Start(otherProjectExePath);
             else
                 MessageBox.Show("The main project executable was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        // Combobox Language Selector
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // TO DO
         }
 
     }
