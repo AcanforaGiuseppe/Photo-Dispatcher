@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
 
 namespace Photo_Dispatcher
 {
@@ -9,7 +10,9 @@ namespace Photo_Dispatcher
     {
         private static IConfiguration _configuration;
         private static CustomLoggerProvider _customLoggerProvider;
+        private static string _configFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\appsettings.json"));
 
+        //F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\Photo Dispatcher\appsettings.json
         static void Main(string[] args)
         {
             // Initialize the custom logger provider
@@ -44,8 +47,11 @@ namespace Photo_Dispatcher
                 LogError(logger, ex, "An error occurred during execution.");
             }
 
-            // Write the report file
+            // Write the report.txt file
             WriteReport();
+
+            // Clear appsetting.json file
+            ClearAppSettingsFile();
 
             // Prevent the console window from closing immediately
             Console.WriteLine("Press any key to continue...");
@@ -119,6 +125,36 @@ namespace Photo_Dispatcher
             }
 
             Console.WriteLine($"Report written to {reportFilePath}");
+        }
+
+        private static void ClearAppSettingsFile()
+        {
+            var emptyAppSettings = new JObject
+            {
+                ["EmailSettings"] = new JObject
+                {
+                    ["FromName"] = "",
+                    ["SmtpServer"] = "",
+                    ["SmtpPort"] = 0,
+                    ["SmtpUser"] = "",
+                    ["SmtpPass"] = "",
+                    ["EmailSubject"] = "",
+                    ["EmailBody"] = ""
+                },
+                ["Paths"] = new JObject
+                {
+                    ["PhotosDirectory"] = "",
+                    ["CsvFilePath"] = ""
+                }
+            };
+
+            using(var fileStream = new FileStream(_configFilePath, FileMode.Create, FileAccess.Write))
+            {
+                using(var streamWriter = new StreamWriter(fileStream))
+                {
+                    streamWriter.Write(emptyAppSettings.ToString());
+                }
+            }
         }
 
     }

@@ -13,7 +13,6 @@ namespace PhotoDispatcherView
 
         public SettingsForm()
         {
-            ClearAppSettingsFile();
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeTooltips();
@@ -202,38 +201,6 @@ namespace PhotoDispatcherView
                 Process.Start(otherProjectExePath);
             else
                 MessageBox.Show("The main project executable was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-
-        // Clears appsettings.json file
-        private void ClearAppSettingsFile()
-        {
-            var emptyAppSettings = new JObject
-            {
-                ["EmailSettings"] = new JObject
-                {
-                    ["FromName"] = "",
-                    ["SmtpServer"] = "",
-                    ["SmtpPort"] = 0,
-                    ["SmtpUser"] = "",
-                    ["SmtpPass"] = "",
-                    ["EmailSubject"] = "",
-                    ["EmailBody"] = ""
-                },
-                ["Paths"] = new JObject
-                {
-                    ["PhotosDirectory"] = "",
-                    ["CsvFilePath"] = ""
-                }
-            };
-
-            using(var fileStream = new FileStream(_configFilePath, FileMode.Create, FileAccess.Write))
-            {
-                using(var streamWriter = new StreamWriter(fileStream))
-                {
-                    streamWriter.Write(emptyAppSettings.ToString());
-                }
-            }
         }
 
     }
