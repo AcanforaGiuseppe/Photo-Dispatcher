@@ -159,10 +159,17 @@ namespace PhotoDispatcherView
 
         private void LaunchPhotoDispatcherMainProject()
         {
+            // If the code is being launched in Debug mode, the executable will be taken from the Debug folder. Otherwise, the Release one will be used.
+#if DEBUG
+            string configuration = "Debug";
+#else
+            string configuration = "Release";
+#endif
+
             // Define the paths
             string solutionDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
             string projectFilePath = Path.Combine(solutionDirectory, @"Photo Dispatcher\PhotoDispatcher.csproj");
-            string otherProjectExePath = Path.Combine(solutionDirectory, @"Photo Dispatcher\bin\Debug\net8.0\PhotoDispatcher.exe");
+            string otherProjectExePath = Path.Combine(solutionDirectory, $@"Photo Dispatcher\bin\{configuration}\net8.0\PhotoDispatcher.exe");
 
             // Debug: Verify the solution and project file paths
             MessageBox.Show($"Solution directory: {solutionDirectory}\nProject file path: {projectFilePath}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -170,7 +177,7 @@ namespace PhotoDispatcherView
             // Build the project
             Process buildProcess = new Process();
             buildProcess.StartInfo.FileName = "dotnet";
-            buildProcess.StartInfo.Arguments = $"build \"{projectFilePath}\"";
+            buildProcess.StartInfo.Arguments = $"build \"{projectFilePath}\" -c {configuration}";
             buildProcess.StartInfo.WorkingDirectory = solutionDirectory;
             buildProcess.StartInfo.RedirectStandardOutput = true;
             buildProcess.StartInfo.RedirectStandardError = true;
