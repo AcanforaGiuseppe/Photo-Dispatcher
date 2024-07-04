@@ -135,7 +135,8 @@ namespace Photo_Dispatcher
                 foreach(var log in _customLoggerProvider.ErrorLogs)
                     writer.WriteLine(log);
 
-                writer.WriteLine($"\nTotal emails sent successfully: {totalEmailsSent}");
+                writer.WriteLine($"\nRecap emails sent/not sent:");
+                writer.WriteLine($"Total emails sent successfully: {totalEmailsSent}");
                 writer.WriteLine($"Total photos for pass number not found (email not sent): {totalPhotosForPassNumberNotFound}");
                 writer.WriteLine($"Total emails not sent: {totalEmailsNotSent}");
                 writer.WriteLine($"\nTotal execution time: {totalExecutionTime} seconds");
