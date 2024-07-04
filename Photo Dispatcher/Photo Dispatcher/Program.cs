@@ -12,7 +12,6 @@ namespace Photo_Dispatcher
         private static CustomLoggerProvider _customLoggerProvider;
         private static string _configFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\appsettings.json"));
 
-        //F:\Development\- Private Projects\Photo Dispatcher\Photo Dispatcher\Photo Dispatcher\appsettings.json
         static void Main(string[] args)
         {
             // Initialize the custom logger provider

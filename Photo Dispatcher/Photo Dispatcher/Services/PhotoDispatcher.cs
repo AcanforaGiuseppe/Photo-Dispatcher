@@ -63,7 +63,7 @@ namespace Photo_Dispatcher
                         if(matchedFiles.Length > 0)
                             photoPaths.AddRange(matchedFiles);
                         else
-                            _logger.LogWarning($"Photo for pass number {passNumber} not found for email {email}");
+                            _logger.LogWarning($"PassNumber {passNumber} photo not found, email {email}");
                     }
 
                     if(photoPaths.Count > 0)
