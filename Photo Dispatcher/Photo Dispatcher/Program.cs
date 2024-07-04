@@ -39,12 +39,12 @@ namespace Photo_Dispatcher
                 // Call the DispatchPhotos method with the CSV file path
                 photoDispatcher.DispatchPhotos(paths.CsvFilePath);
                 // Log that the application terminated successfully
-                LogInformation(logger, "Application terminated successfully.");
+                LogInformation(logger, "Application terminated successfully");
             }
             catch(Exception ex)
             {
                 // Log an error message if an exception occurs
-                LogError(logger, ex, "An error occurred during execution.");
+                LogError(logger, ex, "An error occurred during execution");
             }
 
             // Write the report.txt file
