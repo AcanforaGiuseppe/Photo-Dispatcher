@@ -35,12 +35,15 @@ namespace Photo_Dispatcher
         {
             try
             {
-                _logger.LogInformation("Dispatching photos...");
+                _logger.LogInformation($"Attempting to load photo folder from path: {_photosDirectory}");
 
                 var passEmailMap = _csvLoader.LoadPassEmailMap(csvFilePath);
                 var allFiles = Directory.GetFiles(_photosDirectory);
 
-                _logger.LogInformation($"Found {allFiles.Length} files in the directory.");
+                if(allFiles.Length > 0)
+                    _logger.LogInformation($"Found {allFiles.Length} photos in the selected directory. Starting to dispatch photos");
+                else
+                    throw new Exception("No photos found in the directory");
 
                 foreach(var entry in passEmailMap)
                 {
@@ -60,18 +63,17 @@ namespace Photo_Dispatcher
                         if(matchedFiles.Length > 0)
                             photoPaths.AddRange(matchedFiles);
                         else
-                            _logger.LogWarning($"Photo for pass number {passNumber} not found for email {email}.");
+                            _logger.LogWarning($"Photo for pass number {passNumber} not found for email {email}");
                     }
 
                     if(photoPaths.Count > 0)
                     {
                         var mail = new Email(email, _emailSubject, _emailBody, photoPaths);
                         _emailSender.SendEmail(mail);
-                        _logger.LogInformation($"Email sent to {email} with photos {string.Join(", ", photoPaths)}.");
                     }
                 }
 
-                _logger.LogInformation("Photo dispatch process completed.");
+                _logger.LogInformation("Photo dispatch process completed");
             }
             catch(Exception ex)
             {
