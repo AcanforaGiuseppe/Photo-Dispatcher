@@ -11,6 +11,9 @@ namespace Photo_Dispatcher
         private static IConfiguration _configuration;
         private static CustomLoggerProvider _customLoggerProvider;
         private static string _configFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\appsettings.json"));
+        private static int totalEmailsSent = 0;
+        private static int totalPhotosForPassNumberNotFound = 0;
+        private static int totalEmailsNotSent = 0;
 
         static void Main(string[] args)
         {
@@ -71,10 +74,10 @@ namespace Photo_Dispatcher
 
             // Configure logging to use both the console and the custom logger provider
             services.AddLogging(configure =>
-                                            {
-                                                configure.AddConsole();
-                                                configure.AddProvider(_customLoggerProvider);
-                                            })
+            {
+                configure.AddConsole();
+                configure.AddProvider(_customLoggerProvider);
+            })
                     .AddTransient<EmailSender>() // Register EmailSender as a transient service
                     .AddTransient<CsvLoader>() // Register CsvLoader as a transient service
                     .AddTransient<PhotoDispatch>();  // Register PhotoDispatch as a transient service
@@ -121,6 +124,10 @@ namespace Photo_Dispatcher
                 writer.WriteLine("\nError Logs:");
                 foreach(var log in _customLoggerProvider.ErrorLogs)
                     writer.WriteLine(log);
+
+                writer.WriteLine($"\nTotal emails sent successfully: {totalEmailsSent}");
+                writer.WriteLine($"Total photos for pass number not found (email not sent): {totalPhotosForPassNumberNotFound}");
+                writer.WriteLine($"Total emails not sent: {totalEmailsNotSent}");
             }
 
             Console.WriteLine($"Report written to {reportFilePath}");
@@ -154,6 +161,21 @@ namespace Photo_Dispatcher
                     streamWriter.Write(emptyAppSettings.ToString());
                 }
             }
+        }
+
+        public static void IncrementEmailSentCount()
+        {
+            totalEmailsSent++;
+        }
+
+        public static void IncrementPassNumberPhotoNotFoundCount()
+        {
+            totalPhotosForPassNumberNotFound++;
+        }
+
+        public static void IncrementEmailNotSent()
+        {
+            totalEmailsNotSent++;
         }
 
     }

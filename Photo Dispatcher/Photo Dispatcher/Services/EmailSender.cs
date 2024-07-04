@@ -62,14 +62,17 @@ namespace Photo_Dispatcher
                     {
                         smtp.Send(message);
                         _logger.LogInformation($"Email successfully sent to {mail.To} with photos: {string.Join(", ", mail.AttachmentPaths)}");
+                        Program.IncrementEmailSentCount();
                     }
                     catch(SmtpException smtpEx)
                     {
                         _logger.LogError(smtpEx, $"SMTP error occurred while sending email to {mail.To} - Source: {smtpEx.Source}, Message: {smtpEx.Message}, InnerException: {smtpEx.InnerException}, HelpLink: {smtpEx.HelpLink}");
+                        Program.IncrementEmailNotSent();
                     }
                     catch(Exception ex)
                     {
                         _logger.LogError(ex, $"An error occurred while sending email to {mail.To} - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                        Program.IncrementEmailNotSent();
                     }
                 }
             }

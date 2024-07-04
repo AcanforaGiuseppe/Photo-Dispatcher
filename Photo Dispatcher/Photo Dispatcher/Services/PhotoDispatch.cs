@@ -61,16 +61,20 @@ namespace Photo_Dispatcher
                                         .ToArray();
 
                         if(matchedFiles.Length > 0)
+                        {
                             photoPaths.AddRange(matchedFiles);
+                        }
                         else
+                        {
                             _logger.LogWarning($"PassNumber {passNumber} photo not found, email {email}");
+                            Program.IncrementPassNumberPhotoNotFoundCount();
+                        }
                     }
 
                     if(photoPaths.Count > 0)
                     {
                         var mail = new Email(email, _emailSubject, _emailBody, photoPaths);
                         _emailSender.SendEmail(mail);
-                        Program.IncrementEmailSentCount();
                     }
                 }
 
