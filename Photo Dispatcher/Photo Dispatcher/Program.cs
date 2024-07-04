@@ -16,6 +16,7 @@ namespace Photo_Dispatcher
         private static int totalPhotosForPassNumberNotFound = 0;
         private static int totalEmailsNotSent = 0;
         private static double totalEmailSendTime = 0;
+        private static int totalEmailsInCsv = 0;
 
         static void Main(string[] args)
         {
@@ -135,7 +136,8 @@ namespace Photo_Dispatcher
                 foreach(var log in _customLoggerProvider.ErrorLogs)
                     writer.WriteLine(log);
 
-                writer.WriteLine($"\nRecap emails sent/not sent:");
+                writer.WriteLine($"\nRecap informations about emails:");
+                writer.WriteLine($"Total emails in CSV: {totalEmailsInCsv}");
                 writer.WriteLine($"Total emails sent successfully: {totalEmailsSent}");
                 writer.WriteLine($"Total photos for pass number not found (email not sent): {totalPhotosForPassNumberNotFound}");
                 writer.WriteLine($"Total emails not sent: {totalEmailsNotSent}");
@@ -190,6 +192,11 @@ namespace Photo_Dispatcher
         public static void IncrementEmailNotSent()
         {
             totalEmailsNotSent++;
+        }
+
+        public static void IncrementTotalEmailsInCsv(int count)
+        {
+            totalEmailsInCsv = count;
         }
 
     }

@@ -6,7 +6,7 @@ namespace Photo_Dispatcher
 {
     /// <summary>
     /// This class is responsible for dispatching photos via email. It handles loading the email mappings from a CSV file,
-    /// finding the corresponding photos, and sending the emails with the photos attached.
+    /// finding the corresponding photos, and sending them via email.
     /// </summary>
     public class PhotoDispatch
     {
@@ -38,6 +38,7 @@ namespace Photo_Dispatcher
                 _logger.LogInformation($"Attempting to load photo folder from path: {_photosDirectory}");
 
                 var passEmailMap = _csvLoader.LoadPassEmailMap(csvFilePath);
+                Program.IncrementTotalEmailsInCsv(passEmailMap.Count);
                 var allFiles = Directory.GetFiles(_photosDirectory);
 
                 if(allFiles.Length > 0)
