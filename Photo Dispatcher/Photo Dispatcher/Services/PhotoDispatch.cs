@@ -70,6 +70,7 @@ namespace Photo_Dispatcher
                     {
                         var mail = new Email(email, _emailSubject, _emailBody, photoPaths);
                         _emailSender.SendEmail(mail);
+                        Program.IncrementEmailSentCount();
                     }
                 }
 
