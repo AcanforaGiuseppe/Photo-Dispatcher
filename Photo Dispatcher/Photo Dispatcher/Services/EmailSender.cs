@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
 
@@ -35,6 +36,8 @@ namespace Photo_Dispatcher
         /// <param name="mail">The email details including recipient, subject, body, and optional attachment.</param>
         public void SendEmail(Email mail)
         {
+            var stopwatch = Stopwatch.StartNew(); // Start the timer for sending email
+
             try
             {
                 var fromAddress = new MailAddress(_smtpUser, _fromName);
@@ -61,16 +64,19 @@ namespace Photo_Dispatcher
                     try
                     {
                         smtp.Send(message);
+                        stopwatch.Stop(); // Stop the timer
+                        Program.IncrementEmailSentCount(stopwatch.Elapsed.TotalMilliseconds); // Log the email send time
                         _logger.LogInformation($"Email successfully sent to {mail.To} with photos: {string.Join(", ", mail.AttachmentPaths)}");
-                        Program.IncrementEmailSentCount();
                     }
                     catch(SmtpException smtpEx)
                     {
+                        stopwatch.Stop(); // Stop the timer in case of an error
                         _logger.LogError(smtpEx, $"SMTP error occurred while sending email to {mail.To} - Source: {smtpEx.Source}, Message: {smtpEx.Message}, InnerException: {smtpEx.InnerException}, HelpLink: {smtpEx.HelpLink}");
                         Program.IncrementEmailNotSent();
                     }
                     catch(Exception ex)
                     {
+                        stopwatch.Stop(); // Stop the timer in case of an error
                         _logger.LogError(ex, $"An error occurred while sending email to {mail.To} - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
                         Program.IncrementEmailNotSent();
                     }

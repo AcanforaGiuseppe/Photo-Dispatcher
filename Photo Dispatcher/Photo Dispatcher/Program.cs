@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace Photo_Dispatcher
 {
@@ -14,9 +15,13 @@ namespace Photo_Dispatcher
         private static int totalEmailsSent = 0;
         private static int totalPhotosForPassNumberNotFound = 0;
         private static int totalEmailsNotSent = 0;
+        private static double totalEmailSendTime = 0;
 
         static void Main(string[] args)
         {
+            // Start the timer for the total execution time
+            var stopwatch = Stopwatch.StartNew();
+
             // Initialize the custom logger provider
             _customLoggerProvider = new CustomLoggerProvider();
 
@@ -49,8 +54,12 @@ namespace Photo_Dispatcher
                 LogError(logger, ex, "An error occurred during execution");
             }
 
+            // Stop the timer and calculate the total execution time
+            stopwatch.Stop();
+            double totalExecutionTime = stopwatch.Elapsed.TotalSeconds;
+
             // Write the report.txt file
-            WriteReport();
+            WriteReport(totalExecutionTime);
 
             // Clear appsetting.json file
             ClearAppSettingsFile();
@@ -107,9 +116,10 @@ namespace Photo_Dispatcher
         }
 
         // Method to write the report file
-        private static void WriteReport()
+        private static void WriteReport(double totalExecutionTime)
         {
             string reportFilePath = Path.Combine(Path.GetDirectoryName(typeof(Program).Assembly.Location), "report.txt");
+            double averageEmailSendTime = totalEmailsSent > 0 ? totalEmailSendTime / totalEmailsSent : 0;
 
             using(var writer = new StreamWriter(reportFilePath))
             {
@@ -128,6 +138,8 @@ namespace Photo_Dispatcher
                 writer.WriteLine($"\nTotal emails sent successfully: {totalEmailsSent}");
                 writer.WriteLine($"Total photos for pass number not found (email not sent): {totalPhotosForPassNumberNotFound}");
                 writer.WriteLine($"Total emails not sent: {totalEmailsNotSent}");
+                writer.WriteLine($"\nTotal execution time: {totalExecutionTime} seconds");
+                writer.WriteLine($"Average email send time: {averageEmailSendTime} milliseconds");
             }
 
             Console.WriteLine($"Report written to {reportFilePath}");
@@ -163,9 +175,10 @@ namespace Photo_Dispatcher
             }
         }
 
-        public static void IncrementEmailSentCount()
+        public static void IncrementEmailSentCount(double emailSendTime)
         {
             totalEmailsSent++;
+            totalEmailSendTime += emailSendTime;
         }
 
         public static void IncrementPassNumberPhotoNotFoundCount()
