@@ -42,7 +42,7 @@ namespace Photo_Dispatcher
                     }
                 }
 
-                _logger.LogInformation("CSV file loaded successfully.");
+                _logger.LogInformation("CSV file loaded successfully");
             }
             catch(Exception ex)
             {
