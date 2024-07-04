@@ -58,14 +58,24 @@ namespace Photo_Dispatcher
                     foreach(var attachmentPath in mail.AttachmentPaths)
                         message.Attachments.Add(new Attachment(attachmentPath));
 
-                    smtp.Send(message);
+                    try
+                    {
+                        smtp.Send(message);
+                        _logger.LogInformation($"Email successfully sent to {mail.To} with photos: {string.Join(", ", mail.AttachmentPaths)}");
+                    }
+                    catch(SmtpException smtpEx)
+                    {
+                        _logger.LogError(smtpEx, $"SMTP error occurred while sending email to {mail.To} - Source: {smtpEx.Source}, Message: {smtpEx.Message}, InnerException: {smtpEx.InnerException}, HelpLink: {smtpEx.HelpLink}");
+                    }
+                    catch(Exception ex)
+                    {
+                        _logger.LogError(ex, $"An error occurred while sending email to {mail.To} - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                    }
                 }
-
-                _logger.LogInformation($"Sending Email to {mail.To} with photos: {string.Join(", ", mail.AttachmentPaths)}.");
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex, @$"Failed to send email to {mail.To}. - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
+                _logger.LogError(ex, $"Failed to prepare email for {mail.To} - Source: {ex.Source}, Message: {ex.Message}, InnerException: {ex.InnerException}, HelpLink: {ex.HelpLink}");
             }
         }
 
