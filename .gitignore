@@ -3,7 +3,10 @@
 ################################################################################
 
 /Photo Dispatcher/.vs/
-/Photo Dispatcher/Photo Dispatcher/Photo Dispatcher/obj/
-/Photo Dispatcher/Photo Dispatcher/bin/
 /Photo Dispatcher/Photo Dispatcher/obj/
+/Photo Dispatcher/Photo Dispatcher/bin/
 /Photo Dispatcher/Photo Dispatcher/appsettings.json
+/PhotoDispatcherView/bin/
+/PhotoDispatcherView/obj/
+/Photos/
+/emails.csv/
