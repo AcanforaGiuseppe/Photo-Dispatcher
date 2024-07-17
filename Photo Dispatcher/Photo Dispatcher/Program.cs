@@ -139,7 +139,7 @@ namespace Photo_Dispatcher
                 writer.WriteLine($"\nRecap informations about emails:");
                 writer.WriteLine($"Total emails in CSV: {totalEmailsInCsv}");
                 writer.WriteLine($"Total emails sent successfully: {totalEmailsSent}");
-                writer.WriteLine($"Total photos for pass number not found (email not sent): {totalPhotosForPassNumberNotFound}");
+                writer.WriteLine($"Total photos not attached for pass numbers: {totalPhotosForPassNumberNotFound}");
                 writer.WriteLine($"Total emails not sent: {totalEmailsNotSent}");
                 writer.WriteLine($"\nTotal execution time: {totalExecutionTime} seconds");
                 writer.WriteLine($"Average email send time: {averageEmailSendTime} milliseconds");

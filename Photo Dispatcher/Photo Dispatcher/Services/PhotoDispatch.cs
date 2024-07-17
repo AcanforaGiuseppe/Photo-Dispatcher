@@ -67,7 +67,7 @@ namespace Photo_Dispatcher
                         }
                         else
                         {
-                            _logger.LogWarning($"PassNumber {passNumber} photo not found, email {email}");
+                            _logger.LogWarning($"PassNumber {passNumber} photo not found for email {email}");
                             Program.IncrementPassNumberPhotoNotFoundCount();
                         }
                     }

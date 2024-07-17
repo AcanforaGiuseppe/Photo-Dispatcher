@@ -108,7 +108,10 @@ namespace Photo_Dispatcher
             }
 
             if(!emailSent)
+            {
                 _logger.LogError($"Failed to send email to {mail.To} after {retryAttempts} attempts");
+                Program.IncrementEmailNotSent();
+            }
         }
 
     }
