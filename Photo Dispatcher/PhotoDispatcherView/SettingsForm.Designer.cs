@@ -52,6 +52,10 @@
             this.emailBodyTextBox = new System.Windows.Forms.TextBox();
             this.languageLabel = new System.Windows.Forms.Label();
             this.languageComboBox = new System.Windows.Forms.ComboBox();
+            this.emailDelaySecondsTextBox = new System.Windows.Forms.TextBox();
+            this.EmailMaxRetryAttemptsTextBox = new System.Windows.Forms.TextBox();
+            this.emailDelaySecondsLabel = new System.Windows.Forms.Label();
+            this.emailRetryAttemptsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // photosDirectoryLabel
@@ -85,7 +89,7 @@
             // emailBodyLabel
             // 
             this.emailBodyLabel.AutoSize = true;
-            this.emailBodyLabel.Location = new System.Drawing.Point(7, 363);
+            this.emailBodyLabel.Location = new System.Drawing.Point(8, 423);
             this.emailBodyLabel.Name = "emailBodyLabel";
             this.emailBodyLabel.Size = new System.Drawing.Size(59, 13);
             this.emailBodyLabel.TabIndex = 3;
@@ -95,7 +99,7 @@
             // emailSubjectLabel
             // 
             this.emailSubjectLabel.AutoSize = true;
-            this.emailSubjectLabel.Location = new System.Drawing.Point(7, 333);
+            this.emailSubjectLabel.Location = new System.Drawing.Point(8, 393);
             this.emailSubjectLabel.Name = "emailSubjectLabel";
             this.emailSubjectLabel.Size = new System.Drawing.Size(71, 13);
             this.emailSubjectLabel.TabIndex = 4;
@@ -182,10 +186,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(246, 481);
+            this.SaveButton.Location = new System.Drawing.Point(243, 538);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(257, 43);
-            this.SaveButton.TabIndex = 12;
+            this.SaveButton.TabIndex = 14;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.button3_Click);
@@ -243,20 +247,20 @@
             // 
             // emailSubjectTextBox
             // 
-            this.emailSubjectTextBox.Location = new System.Drawing.Point(114, 330);
+            this.emailSubjectTextBox.Location = new System.Drawing.Point(115, 390);
             this.emailSubjectTextBox.Name = "emailSubjectTextBox";
             this.emailSubjectTextBox.Size = new System.Drawing.Size(542, 20);
-            this.emailSubjectTextBox.TabIndex = 10;
+            this.emailSubjectTextBox.TabIndex = 12;
             this.emailSubjectTextBox.TextChanged += new System.EventHandler(this.emailSubjectTextBox_TextChanged);
             // 
             // emailBodyTextBox
             // 
-            this.emailBodyTextBox.Location = new System.Drawing.Point(114, 360);
+            this.emailBodyTextBox.Location = new System.Drawing.Point(115, 420);
             this.emailBodyTextBox.Multiline = true;
             this.emailBodyTextBox.Name = "emailBodyTextBox";
             this.emailBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.emailBodyTextBox.Size = new System.Drawing.Size(542, 100);
-            this.emailBodyTextBox.TabIndex = 11;
+            this.emailBodyTextBox.TabIndex = 13;
             this.emailBodyTextBox.TextChanged += new System.EventHandler(this.emailBodyTextBox_TextChanged);
             // 
             // languageLabel
@@ -281,12 +285,53 @@
             this.languageComboBox.TabIndex = 0;
             this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged_1);
             // 
+            // emailDelaySecondsTextBox
+            // 
+            this.emailDelaySecondsTextBox.Location = new System.Drawing.Point(114, 330);
+            this.emailDelaySecondsTextBox.Name = "emailDelaySecondsTextBox";
+            this.emailDelaySecondsTextBox.Size = new System.Drawing.Size(278, 20);
+            this.emailDelaySecondsTextBox.TabIndex = 10;
+            this.emailDelaySecondsTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // EmailMaxRetryAttemptsTextBox
+            // 
+            this.EmailMaxRetryAttemptsTextBox.Location = new System.Drawing.Point(114, 360);
+            this.EmailMaxRetryAttemptsTextBox.Name = "EmailMaxRetryAttemptsTextBox";
+            this.EmailMaxRetryAttemptsTextBox.PasswordChar = '*';
+            this.EmailMaxRetryAttemptsTextBox.Size = new System.Drawing.Size(278, 20);
+            this.EmailMaxRetryAttemptsTextBox.TabIndex = 11;
+            this.EmailMaxRetryAttemptsTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // emailDelaySecondsLabel
+            // 
+            this.emailDelaySecondsLabel.AutoSize = true;
+            this.emailDelaySecondsLabel.Location = new System.Drawing.Point(7, 333);
+            this.emailDelaySecondsLabel.Name = "emailDelaySecondsLabel";
+            this.emailDelaySecondsLabel.Size = new System.Drawing.Size(107, 13);
+            this.emailDelaySecondsLabel.TabIndex = 18;
+            this.emailDelaySecondsLabel.Text = "Email Delay Seconds";
+            this.emailDelaySecondsLabel.Click += new System.EventHandler(this.emailDelaySeconds_Click);
+            // 
+            // emailRetryAttemptsLabel
+            // 
+            this.emailRetryAttemptsLabel.AutoSize = true;
+            this.emailRetryAttemptsLabel.Location = new System.Drawing.Point(7, 363);
+            this.emailRetryAttemptsLabel.Name = "emailRetryAttemptsLabel";
+            this.emailRetryAttemptsLabel.Size = new System.Drawing.Size(104, 13);
+            this.emailRetryAttemptsLabel.TabIndex = 17;
+            this.emailRetryAttemptsLabel.Text = "Email Retry Attempts";
+            this.emailRetryAttemptsLabel.Click += new System.EventHandler(this.emailRetryAttempts_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(187)))), ((int)(((byte)(155)))));
-            this.ClientSize = new System.Drawing.Size(748, 546);
+            this.ClientSize = new System.Drawing.Size(748, 599);
+            this.Controls.Add(this.emailDelaySecondsTextBox);
+            this.Controls.Add(this.EmailMaxRetryAttemptsTextBox);
+            this.Controls.Add(this.emailDelaySecondsLabel);
+            this.Controls.Add(this.emailRetryAttemptsLabel);
             this.Controls.Add(this.languageComboBox);
             this.Controls.Add(this.languageLabel);
             this.Controls.Add(this.emailBodyTextBox);
@@ -347,5 +392,9 @@
         private System.Windows.Forms.TextBox emailBodyTextBox;
         private System.Windows.Forms.Label languageLabel;
         private System.Windows.Forms.ComboBox languageComboBox;
+        private System.Windows.Forms.TextBox emailDelaySecondsTextBox;
+        private System.Windows.Forms.TextBox EmailMaxRetryAttemptsTextBox;
+        private System.Windows.Forms.Label emailDelaySecondsLabel;
+        private System.Windows.Forms.Label emailRetryAttemptsLabel;
     }
 }

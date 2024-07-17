@@ -169,6 +169,78 @@ namespace PhotoDispatcherView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Delay Seconds.
+        /// </summary>
+        internal static string emailDelaySecondsLabel_Text_en {
+            get {
+                return ResourceManager.GetString("emailDelaySecondsLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ritardo Invio (sec).
+        /// </summary>
+        internal static string emailDelaySecondsLabel_Text_it {
+            get {
+                return ResourceManager.GetString("emailDelaySecondsLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the delay in seconds between sending each email..
+        /// </summary>
+        internal static string emailDelaySecondsLabel_Tooltip_en {
+            get {
+                return ResourceManager.GetString("emailDelaySecondsLabel.Tooltip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifica il ritardo in secondi tra l&apos;invio di ogni email..
+        /// </summary>
+        internal static string emailDelaySecondsLabel_Tooltip_it {
+            get {
+                return ResourceManager.GetString("emailDelaySecondsLabel.Tooltip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Retry Attempts.
+        /// </summary>
+        internal static string emailRetryAttemptsLabel_Text_en {
+            get {
+                return ResourceManager.GetString("emailRetryAttemptsLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max Tentativi Reinvio Email.
+        /// </summary>
+        internal static string emailRetryAttemptsLabel_Text_it {
+            get {
+                return ResourceManager.GetString("emailRetryAttemptsLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the maximum number of retry attempts for sending failed emails..
+        /// </summary>
+        internal static string emailRetryAttemptsLabel_Tooltip_en {
+            get {
+                return ResourceManager.GetString("emailRetryAttemptsLabel.Tooltip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifica il numero massimo di tentativi di invio per email fallite..
+        /// </summary>
+        internal static string emailRetryAttemptsLabel_Tooltip_it {
+            get {
+                return ResourceManager.GetString("emailRetryAttemptsLabel.Tooltip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email Subject.
         /// </summary>
         internal static string emailSubjectLabel_Text_en {

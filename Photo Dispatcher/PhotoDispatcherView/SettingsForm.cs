@@ -81,6 +81,18 @@ namespace PhotoDispatcherView
         private void languageLabel_Click(object sender, EventArgs e)
         { }
 
+        private void emailDelaySeconds_Click(object sender, EventArgs e)
+        { }
+
+        private void emailRetryAttempts_Click(object sender, EventArgs e)
+        { }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        { }
+
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -127,7 +139,9 @@ namespace PhotoDispatcherView
                 ["SmtpUser"] = smtpUserTextBox.Text,
                 ["SmtpPass"] = smtpPassTextBox.Text,
                 ["EmailSubject"] = emailSubjectTextBox.Text,
-                ["EmailBody"] = emailBodyTextBox.Text
+                ["EmailBody"] = emailBodyTextBox.Text,
+                ["SendDelaySeconds"] = int.Parse(emailDelaySecondsTextBox.Text),
+                ["MaxRetryAttempts"] = int.Parse(EmailMaxRetryAttemptsTextBox.Text)
             };
 
             var paths = new JObject
@@ -229,6 +243,8 @@ namespace PhotoDispatcherView
             BrowsePhotosButton.Text = _resourceManager.GetString($"BrowsePhotosButton.Text.{culture}", cultureInfo);
             button2.Text = _resourceManager.GetString($"button2.Text.{culture}", cultureInfo);
             languageLabel.Text = _resourceManager.GetString($"languageLabel.Text.{culture}", cultureInfo);
+            emailDelaySecondsLabel.Text = _resourceManager.GetString("emailDelaySecondsLabel.Text", cultureInfo);
+            emailRetryAttemptsLabel.Text = _resourceManager.GetString("emailRetryAttemptsLabel.Text", cultureInfo);
 
             // Tooltips
             toolTip.SetToolTip(this.photosDirectoryLabel, _resourceManager.GetString($"photosDirectoryLabel.ToolTip.{culture}", cultureInfo));
@@ -240,6 +256,8 @@ namespace PhotoDispatcherView
             toolTip.SetToolTip(this.smtpPassLabel, _resourceManager.GetString($"smtpPassLabel.ToolTip.{culture}", cultureInfo));
             toolTip.SetToolTip(this.emailSubjectLabel, _resourceManager.GetString($"emailSubjectLabel.ToolTip.{culture}", cultureInfo));
             toolTip.SetToolTip(this.emailBodyLabel, _resourceManager.GetString($"emailBodyLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.emailDelaySecondsLabel, _resourceManager.GetString("emailDelaySecondsLabel.ToolTip", cultureInfo));
+            toolTip.SetToolTip(this.emailRetryAttemptsLabel, _resourceManager.GetString("emailRetryAttemptsLabel.ToolTip", cultureInfo));
         }
 
         private void languageComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
