@@ -261,10 +261,10 @@
   <data name="emailDelaySecondsLabel.Text.it" xml:space="preserve">
     <value>Ritardo Invio (sec)</value>
   </data>
-  <data name="emailDelaySecondsLabel.Tooltip.en" xml:space="preserve">
+  <data name="emailDelaySecondsLabel.ToolTip.en" xml:space="preserve">
     <value>Specify the delay in seconds between sending each email.</value>
   </data>
-  <data name="emailDelaySecondsLabel.Tooltip.it" xml:space="preserve">
+  <data name="emailDelaySecondsLabel.ToolTip.it" xml:space="preserve">
     <value>Specifica il ritardo in secondi tra l'invio di ogni email.</value>
   </data>
   <data name="emailRetryAttemptsLabel.Text.en" xml:space="preserve">
@@ -273,10 +273,10 @@
   <data name="emailRetryAttemptsLabel.Text.it" xml:space="preserve">
     <value>Max Tentativi Reinvio Email</value>
   </data>
-  <data name="emailRetryAttemptsLabel.Tooltip.en" xml:space="preserve">
+  <data name="emailRetryAttemptsLabel.ToolTip.en" xml:space="preserve">
     <value>Specify the maximum number of retry attempts for sending failed emails.</value>
   </data>
-  <data name="emailRetryAttemptsLabel.Tooltip.it" xml:space="preserve">
+  <data name="emailRetryAttemptsLabel.ToolTip.it" xml:space="preserve">
     <value>Specifica il numero massimo di tentativi di invio per email fallite.</value>
   </data>
 </root>

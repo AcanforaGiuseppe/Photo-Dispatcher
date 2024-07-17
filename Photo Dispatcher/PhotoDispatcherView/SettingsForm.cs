@@ -243,8 +243,8 @@ namespace PhotoDispatcherView
             BrowsePhotosButton.Text = _resourceManager.GetString($"BrowsePhotosButton.Text.{culture}", cultureInfo);
             button2.Text = _resourceManager.GetString($"button2.Text.{culture}", cultureInfo);
             languageLabel.Text = _resourceManager.GetString($"languageLabel.Text.{culture}", cultureInfo);
-            emailDelaySecondsLabel.Text = _resourceManager.GetString("emailDelaySecondsLabel.Text", cultureInfo);
-            emailRetryAttemptsLabel.Text = _resourceManager.GetString("emailRetryAttemptsLabel.Text", cultureInfo);
+            emailDelaySecondsLabel.Text = _resourceManager.GetString($"emailDelaySecondsLabel.Text.{culture}", cultureInfo);
+            emailRetryAttemptsLabel.Text = _resourceManager.GetString($"emailRetryAttemptsLabel.Text.{culture}", cultureInfo);
 
             // Tooltips
             toolTip.SetToolTip(this.photosDirectoryLabel, _resourceManager.GetString($"photosDirectoryLabel.ToolTip.{culture}", cultureInfo));
@@ -256,8 +256,8 @@ namespace PhotoDispatcherView
             toolTip.SetToolTip(this.smtpPassLabel, _resourceManager.GetString($"smtpPassLabel.ToolTip.{culture}", cultureInfo));
             toolTip.SetToolTip(this.emailSubjectLabel, _resourceManager.GetString($"emailSubjectLabel.ToolTip.{culture}", cultureInfo));
             toolTip.SetToolTip(this.emailBodyLabel, _resourceManager.GetString($"emailBodyLabel.ToolTip.{culture}", cultureInfo));
-            toolTip.SetToolTip(this.emailDelaySecondsLabel, _resourceManager.GetString("emailDelaySecondsLabel.ToolTip", cultureInfo));
-            toolTip.SetToolTip(this.emailRetryAttemptsLabel, _resourceManager.GetString("emailRetryAttemptsLabel.ToolTip", cultureInfo));
+            toolTip.SetToolTip(this.emailDelaySecondsLabel, _resourceManager.GetString($"emailDelaySecondsLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.emailRetryAttemptsLabel, _resourceManager.GetString($"emailRetryAttemptsLabel.ToolTip.{culture}", cultureInfo));
         }
 
         private void languageComboBox_SelectedIndexChanged_1(object sender, EventArgs e)

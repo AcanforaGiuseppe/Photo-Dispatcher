@@ -297,7 +297,6 @@
             // 
             this.EmailMaxRetryAttemptsTextBox.Location = new System.Drawing.Point(114, 360);
             this.EmailMaxRetryAttemptsTextBox.Name = "EmailMaxRetryAttemptsTextBox";
-            this.EmailMaxRetryAttemptsTextBox.PasswordChar = '*';
             this.EmailMaxRetryAttemptsTextBox.Size = new System.Drawing.Size(278, 20);
             this.EmailMaxRetryAttemptsTextBox.TabIndex = 11;
             this.EmailMaxRetryAttemptsTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);

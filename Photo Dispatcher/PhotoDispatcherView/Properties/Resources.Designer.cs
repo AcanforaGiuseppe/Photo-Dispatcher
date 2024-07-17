@@ -189,18 +189,18 @@ namespace PhotoDispatcherView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Specify the delay in seconds between sending each email..
         /// </summary>
-        internal static string emailDelaySecondsLabel_Tooltip_en {
+        internal static string emailDelaySecondsLabel_ToolTip_en {
             get {
-                return ResourceManager.GetString("emailDelaySecondsLabel.Tooltip.en", resourceCulture);
+                return ResourceManager.GetString("emailDelaySecondsLabel.ToolTip.en", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Specifica il ritardo in secondi tra l&apos;invio di ogni email..
         /// </summary>
-        internal static string emailDelaySecondsLabel_Tooltip_it {
+        internal static string emailDelaySecondsLabel_ToolTip_it {
             get {
-                return ResourceManager.GetString("emailDelaySecondsLabel.Tooltip.it", resourceCulture);
+                return ResourceManager.GetString("emailDelaySecondsLabel.ToolTip.it", resourceCulture);
             }
         }
         
@@ -225,18 +225,18 @@ namespace PhotoDispatcherView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Specify the maximum number of retry attempts for sending failed emails..
         /// </summary>
-        internal static string emailRetryAttemptsLabel_Tooltip_en {
+        internal static string emailRetryAttemptsLabel_ToolTip_en {
             get {
-                return ResourceManager.GetString("emailRetryAttemptsLabel.Tooltip.en", resourceCulture);
+                return ResourceManager.GetString("emailRetryAttemptsLabel.ToolTip.en", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Specifica il numero massimo di tentativi di invio per email fallite..
         /// </summary>
-        internal static string emailRetryAttemptsLabel_Tooltip_it {
+        internal static string emailRetryAttemptsLabel_ToolTip_it {
             get {
-                return ResourceManager.GetString("emailRetryAttemptsLabel.Tooltip.it", resourceCulture);
+                return ResourceManager.GetString("emailRetryAttemptsLabel.ToolTip.it", resourceCulture);
             }
         }
         
