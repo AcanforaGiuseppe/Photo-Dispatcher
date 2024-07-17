@@ -160,7 +160,9 @@ namespace Photo_Dispatcher
                     ["SmtpUser"] = "",
                     ["SmtpPass"] = "",
                     ["EmailSubject"] = "",
-                    ["EmailBody"] = ""
+                    ["EmailBody"] = "",
+                    ["SendDelaySeconds"] = 0,
+                    ["MaxRetryAttempts"] = 0
                 },
                 ["Paths"] = new JObject
                 {
