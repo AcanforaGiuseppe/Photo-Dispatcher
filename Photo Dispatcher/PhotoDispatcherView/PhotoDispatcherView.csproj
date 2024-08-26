@@ -103,7 +103,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PhotoDispatcher logo.ico" />
     <Content Include="PhotoDispatcher-logo.ico" />
   </ItemGroup>
   <ItemGroup>
