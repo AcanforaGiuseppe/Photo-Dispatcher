@@ -325,7 +325,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(187)))), ((int)(((byte)(155)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(210)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(748, 599);
             this.Controls.Add(this.emailDelaySecondsTextBox);
             this.Controls.Add(this.EmailMaxRetryAttemptsTextBox);
