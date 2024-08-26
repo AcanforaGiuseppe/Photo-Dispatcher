@@ -6,11 +6,11 @@
     <RootNamespace>Photo_Dispatcher</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationIcon>PhotoDispatcher logo.ico</ApplicationIcon>
+    <ApplicationIcon>PhotoDispatcher-logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="PhotoDispatcher logo.ico" />
+    <Content Include="PhotoDispatcher-logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
