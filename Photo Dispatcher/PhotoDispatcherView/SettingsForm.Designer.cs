@@ -1,4 +1,7 @@
-﻿namespace PhotoDispatcherView
+﻿/*
+© Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
+*/
+namespace PhotoDispatcherView
 {
     partial class SettingsForm
     {

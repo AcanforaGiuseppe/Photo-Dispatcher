@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿/*
+© Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
+*/
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 /// Custom logger implementation to capture log messages and write them to both the console and a custom logger provider.

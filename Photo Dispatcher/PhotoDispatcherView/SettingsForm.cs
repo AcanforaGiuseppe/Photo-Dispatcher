@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿/*
+© Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
+*/
+using Newtonsoft.Json.Linq;
 using System;
 using System.Diagnostics;
 using System.Globalization;

@@ -1,4 +1,7 @@
-﻿using CsvHelper;
+﻿/*
+© Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
+*/
+using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Globalization;

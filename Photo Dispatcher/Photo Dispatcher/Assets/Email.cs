@@ -1,4 +1,7 @@
-﻿namespace Photo_Dispatcher
+﻿/*
+© Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
+*/
+namespace Photo_Dispatcher
 {
     // Model for email details
     public class Email

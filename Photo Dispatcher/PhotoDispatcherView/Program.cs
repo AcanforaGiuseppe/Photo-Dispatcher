@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+© Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
+*/
+using System;
 using System.Windows.Forms;
 
 namespace PhotoDispatcherView
