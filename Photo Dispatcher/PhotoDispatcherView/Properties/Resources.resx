@@ -279,4 +279,22 @@
   <data name="emailRetryAttemptsLabel.ToolTip.it" xml:space="preserve">
     <value>Specifica il numero massimo di tentativi di invio per email fallite.</value>
   </data>
+  <data name="htmlTemplatePathLabel.Text.en" xml:space="preserve">
+    <value>HTML Template Path</value>
+  </data>
+  <data name="htmlTemplatePathLabel.ToolTip.en" xml:space="preserve">
+    <value>Specify the path to the HTML template for emails.</value>
+  </data>
+  <data name="browseHtmlTemplateButton.Text.en" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="htmlTemplatePathLabel.Text.it" xml:space="preserve">
+    <value>Percorso Template HTML</value>
+  </data>
+  <data name="htmlTemplatePathLabel.ToolTip.it" xml:space="preserve">
+    <value>Specifica il percorso del template HTML per le email.</value>
+  </data>
+  <data name="browseHtmlTemplateButton.Text.it" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
 </root>

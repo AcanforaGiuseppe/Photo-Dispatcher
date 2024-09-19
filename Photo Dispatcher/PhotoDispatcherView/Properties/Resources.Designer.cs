@@ -63,6 +63,24 @@ namespace PhotoDispatcherView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Browse.
         /// </summary>
+        internal static string browseHtmlTemplateButton_Text_en {
+            get {
+                return ResourceManager.GetString("browseHtmlTemplateButton.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sfoglia.
+        /// </summary>
+        internal static string browseHtmlTemplateButton_Text_it {
+            get {
+                return ResourceManager.GetString("browseHtmlTemplateButton.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
         internal static string BrowsePhotosButton_Text_en {
             get {
                 return ResourceManager.GetString("BrowsePhotosButton.Text.en", resourceCulture);
@@ -309,6 +327,42 @@ namespace PhotoDispatcherView.Properties {
         internal static string fromNameLabel_ToolTip_it {
             get {
                 return ResourceManager.GetString("fromNameLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTML Template Path.
+        /// </summary>
+        internal static string htmlTemplatePathLabel_Text_en {
+            get {
+                return ResourceManager.GetString("htmlTemplatePathLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percorso Template HTML.
+        /// </summary>
+        internal static string htmlTemplatePathLabel_Text_it {
+            get {
+                return ResourceManager.GetString("htmlTemplatePathLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the path to the HTML template for emails..
+        /// </summary>
+        internal static string htmlTemplatePathLabel_ToolTip_en {
+            get {
+                return ResourceManager.GetString("htmlTemplatePathLabel.ToolTip.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specifica il percorso del template HTML per le email..
+        /// </summary>
+        internal static string htmlTemplatePathLabel_ToolTip_it {
+            get {
+                return ResourceManager.GetString("htmlTemplatePathLabel.ToolTip.it", resourceCulture);
             }
         }
         
