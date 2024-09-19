@@ -54,6 +54,9 @@ namespace PhotoDispatcherView
         private void label10_Click(object sender, EventArgs e)
         { }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        { }
+
         private void fromNameTextBox_TextChanged(object sender, EventArgs e)
         { }
 
@@ -144,13 +147,14 @@ namespace PhotoDispatcherView
                 ["EmailSubject"] = emailSubjectTextBox.Text,
                 ["EmailBody"] = emailBodyTextBox.Text,
                 ["SendDelaySeconds"] = int.Parse(emailDelaySecondsTextBox.Text),
-                ["MaxRetryAttempts"] = int.Parse(EmailMaxRetryAttemptsTextBox.Text)
+                ["MaxRetryAttempts"] = int.Parse(EmailMaxRetryAttemptsTextBox.Text),
             };
 
             var paths = new JObject
             {
                 ["PhotosDirectory"] = photosDirectoryTextBox.Text,
-                ["CsvFilePath"] = csvFilePathTextBox.Text
+                ["CsvFilePath"] = csvFilePathTextBox.Text,
+                ["HtmlTemplatePath"] = htmlTemplatePathTextBox.Text
             };
 
             var appSettings = new JObject
@@ -248,6 +252,8 @@ namespace PhotoDispatcherView
             languageLabel.Text = _resourceManager.GetString($"languageLabel.Text.{culture}", cultureInfo);
             emailDelaySecondsLabel.Text = _resourceManager.GetString($"emailDelaySecondsLabel.Text.{culture}", cultureInfo);
             emailRetryAttemptsLabel.Text = _resourceManager.GetString($"emailRetryAttemptsLabel.Text.{culture}", cultureInfo);
+            htmlTemplatePathLabel.Text = _resourceManager.GetString($"htmlTemplatePathLabel.Text.{culture}", cultureInfo);
+            browseHtmlTemplateButton.Text = _resourceManager.GetString($"browseHtmlTemplateButton.Text.{culture}", cultureInfo);
 
             // Tooltips
             toolTip.SetToolTip(this.photosDirectoryLabel, _resourceManager.GetString($"photosDirectoryLabel.ToolTip.{culture}", cultureInfo));
@@ -261,6 +267,7 @@ namespace PhotoDispatcherView
             toolTip.SetToolTip(this.emailBodyLabel, _resourceManager.GetString($"emailBodyLabel.ToolTip.{culture}", cultureInfo));
             toolTip.SetToolTip(this.emailDelaySecondsLabel, _resourceManager.GetString($"emailDelaySecondsLabel.ToolTip.{culture}", cultureInfo));
             toolTip.SetToolTip(this.emailRetryAttemptsLabel, _resourceManager.GetString($"emailRetryAttemptsLabel.ToolTip.{culture}", cultureInfo));
+            toolTip.SetToolTip(this.htmlTemplatePathLabel, _resourceManager.GetString($"htmlTemplatePathLabel.ToolTip.{culture}", cultureInfo));
         }
 
         private void languageComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -269,6 +276,18 @@ namespace PhotoDispatcherView
                 ApplyLanguage("en");
             else if(languageComboBox.SelectedItem.ToString() == "Italiano")
                 ApplyLanguage("it");
+        }
+
+        // Browse HTML Template Button Click Event Handler
+        private void browseHtmlTemplateButton_Click(object sender, EventArgs e)
+        {
+            using(var openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "HTML files (*.html)|*.html|All files (*.*)|*.*";
+
+                if(openFileDialog.ShowDialog() == DialogResult.OK)
+                    htmlTemplatePathTextBox.Text = openFileDialog.FileName;
+            }
         }
 
     }

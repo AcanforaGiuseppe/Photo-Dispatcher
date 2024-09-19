@@ -9,7 +9,7 @@ namespace PhotoDispatcherView
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+       
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -59,6 +59,9 @@ namespace PhotoDispatcherView
             this.EmailMaxRetryAttemptsTextBox = new System.Windows.Forms.TextBox();
             this.emailDelaySecondsLabel = new System.Windows.Forms.Label();
             this.emailRetryAttemptsLabel = new System.Windows.Forms.Label();
+            this.browseHtmlTemplateButton = new System.Windows.Forms.Button();
+            this.htmlTemplatePathLabel = new System.Windows.Forms.Label();
+            this.htmlTemplatePathTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // photosDirectoryLabel
@@ -73,9 +76,9 @@ namespace PhotoDispatcherView
             // 
             // photosDirectoryTextBox
             // 
-            this.photosDirectoryTextBox.Location = new System.Drawing.Point(114, 43);
+            this.photosDirectoryTextBox.Location = new System.Drawing.Point(164, 43);
             this.photosDirectoryTextBox.Name = "photosDirectoryTextBox";
-            this.photosDirectoryTextBox.Size = new System.Drawing.Size(510, 20);
+            this.photosDirectoryTextBox.Size = new System.Drawing.Size(465, 20);
             this.photosDirectoryTextBox.TabIndex = 1;
             this.photosDirectoryTextBox.TextChanged += new System.EventHandler(this.photosDirectoryTextBox_TextChanged);
             // 
@@ -162,7 +165,7 @@ namespace PhotoDispatcherView
             // csvFilePathLabel
             // 
             this.csvFilePathLabel.AutoSize = true;
-            this.csvFilePathLabel.Location = new System.Drawing.Point(7, 76);
+            this.csvFilePathLabel.Location = new System.Drawing.Point(7, 80);
             this.csvFilePathLabel.Name = "csvFilePathLabel";
             this.csvFilePathLabel.Size = new System.Drawing.Size(72, 13);
             this.csvFilePathLabel.TabIndex = 10;
@@ -171,15 +174,15 @@ namespace PhotoDispatcherView
             // 
             // csvFilePathTextBox
             // 
-            this.csvFilePathTextBox.Location = new System.Drawing.Point(114, 69);
+            this.csvFilePathTextBox.Location = new System.Drawing.Point(165, 73);
             this.csvFilePathTextBox.Name = "csvFilePathTextBox";
-            this.csvFilePathTextBox.Size = new System.Drawing.Size(510, 20);
+            this.csvFilePathTextBox.Size = new System.Drawing.Size(464, 20);
             this.csvFilePathTextBox.TabIndex = 3;
             this.csvFilePathTextBox.TextChanged += new System.EventHandler(this.csvFilePathTextBox_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(642, 66);
+            this.button2.Location = new System.Drawing.Point(642, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 23);
             this.button2.TabIndex = 4;
@@ -189,10 +192,10 @@ namespace PhotoDispatcherView
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(243, 538);
+            this.SaveButton.Location = new System.Drawing.Point(237, 546);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(257, 43);
-            this.SaveButton.TabIndex = 14;
+            this.SaveButton.TabIndex = 16;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.button3_Click);
@@ -209,61 +212,61 @@ namespace PhotoDispatcherView
             // 
             // smtpPortTextBox
             // 
-            this.smtpPortTextBox.Location = new System.Drawing.Point(114, 240);
+            this.smtpPortTextBox.Location = new System.Drawing.Point(164, 236);
             this.smtpPortTextBox.Name = "smtpPortTextBox";
             this.smtpPortTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpPortTextBox.TabIndex = 7;
+            this.smtpPortTextBox.TabIndex = 9;
             this.smtpPortTextBox.TextChanged += new System.EventHandler(this.smtpPortTextBox_TextChanged);
             // 
             // smtpServerTextBox
             // 
-            this.smtpServerTextBox.Location = new System.Drawing.Point(114, 210);
+            this.smtpServerTextBox.Location = new System.Drawing.Point(164, 206);
             this.smtpServerTextBox.Name = "smtpServerTextBox";
             this.smtpServerTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpServerTextBox.TabIndex = 6;
+            this.smtpServerTextBox.TabIndex = 8;
             this.smtpServerTextBox.TextChanged += new System.EventHandler(this.smtpServerTextBox_TextChanged);
             // 
             // fromNameTextBox
             // 
-            this.fromNameTextBox.Location = new System.Drawing.Point(114, 180);
+            this.fromNameTextBox.Location = new System.Drawing.Point(164, 176);
             this.fromNameTextBox.Name = "fromNameTextBox";
             this.fromNameTextBox.Size = new System.Drawing.Size(278, 20);
-            this.fromNameTextBox.TabIndex = 5;
+            this.fromNameTextBox.TabIndex = 7;
             this.fromNameTextBox.TextChanged += new System.EventHandler(this.fromNameTextBox_TextChanged);
             // 
             // smtpPassTextBox
             // 
-            this.smtpPassTextBox.Location = new System.Drawing.Point(114, 300);
+            this.smtpPassTextBox.Location = new System.Drawing.Point(164, 296);
             this.smtpPassTextBox.Name = "smtpPassTextBox";
             this.smtpPassTextBox.PasswordChar = '*';
             this.smtpPassTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpPassTextBox.TabIndex = 9;
+            this.smtpPassTextBox.TabIndex = 11;
             this.smtpPassTextBox.TextChanged += new System.EventHandler(this.smtpPassTextBox_TextChanged);
             // 
             // smtpUserTextBox
             // 
-            this.smtpUserTextBox.Location = new System.Drawing.Point(114, 270);
+            this.smtpUserTextBox.Location = new System.Drawing.Point(164, 266);
             this.smtpUserTextBox.Name = "smtpUserTextBox";
             this.smtpUserTextBox.Size = new System.Drawing.Size(278, 20);
-            this.smtpUserTextBox.TabIndex = 8;
+            this.smtpUserTextBox.TabIndex = 10;
             this.smtpUserTextBox.TextChanged += new System.EventHandler(this.smtpUserTextBox_TextChanged);
             // 
             // emailSubjectTextBox
             // 
-            this.emailSubjectTextBox.Location = new System.Drawing.Point(115, 390);
+            this.emailSubjectTextBox.Location = new System.Drawing.Point(165, 386);
             this.emailSubjectTextBox.Name = "emailSubjectTextBox";
             this.emailSubjectTextBox.Size = new System.Drawing.Size(542, 20);
-            this.emailSubjectTextBox.TabIndex = 12;
+            this.emailSubjectTextBox.TabIndex = 14;
             this.emailSubjectTextBox.TextChanged += new System.EventHandler(this.emailSubjectTextBox_TextChanged);
             // 
             // emailBodyTextBox
             // 
-            this.emailBodyTextBox.Location = new System.Drawing.Point(115, 420);
+            this.emailBodyTextBox.Location = new System.Drawing.Point(165, 416);
             this.emailBodyTextBox.Multiline = true;
             this.emailBodyTextBox.Name = "emailBodyTextBox";
             this.emailBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.emailBodyTextBox.Size = new System.Drawing.Size(542, 100);
-            this.emailBodyTextBox.TabIndex = 13;
+            this.emailBodyTextBox.TabIndex = 15;
             this.emailBodyTextBox.TextChanged += new System.EventHandler(this.emailBodyTextBox_TextChanged);
             // 
             // languageLabel
@@ -282,26 +285,26 @@ namespace PhotoDispatcherView
             this.languageComboBox.Items.AddRange(new object[] {
             "English",
             "Italiano"});
-            this.languageComboBox.Location = new System.Drawing.Point(114, 17);
+            this.languageComboBox.Location = new System.Drawing.Point(79, 16);
             this.languageComboBox.Name = "languageComboBox";
-            this.languageComboBox.Size = new System.Drawing.Size(124, 21);
+            this.languageComboBox.Size = new System.Drawing.Size(68, 21);
             this.languageComboBox.TabIndex = 0;
             this.languageComboBox.SelectedIndexChanged += new System.EventHandler(this.languageComboBox_SelectedIndexChanged_1);
             // 
             // emailDelaySecondsTextBox
             // 
-            this.emailDelaySecondsTextBox.Location = new System.Drawing.Point(114, 330);
+            this.emailDelaySecondsTextBox.Location = new System.Drawing.Point(164, 326);
             this.emailDelaySecondsTextBox.Name = "emailDelaySecondsTextBox";
             this.emailDelaySecondsTextBox.Size = new System.Drawing.Size(278, 20);
-            this.emailDelaySecondsTextBox.TabIndex = 10;
+            this.emailDelaySecondsTextBox.TabIndex = 12;
             this.emailDelaySecondsTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // EmailMaxRetryAttemptsTextBox
             // 
-            this.EmailMaxRetryAttemptsTextBox.Location = new System.Drawing.Point(114, 360);
+            this.EmailMaxRetryAttemptsTextBox.Location = new System.Drawing.Point(164, 356);
             this.EmailMaxRetryAttemptsTextBox.Name = "EmailMaxRetryAttemptsTextBox";
             this.EmailMaxRetryAttemptsTextBox.Size = new System.Drawing.Size(278, 20);
-            this.EmailMaxRetryAttemptsTextBox.TabIndex = 11;
+            this.EmailMaxRetryAttemptsTextBox.TabIndex = 13;
             this.EmailMaxRetryAttemptsTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // emailDelaySecondsLabel
@@ -324,12 +327,41 @@ namespace PhotoDispatcherView
             this.emailRetryAttemptsLabel.Text = "Email Retry Attempts";
             this.emailRetryAttemptsLabel.Click += new System.EventHandler(this.emailRetryAttempts_Click);
             // 
+            // browseHtmlTemplateButton
+            // 
+            this.browseHtmlTemplateButton.Location = new System.Drawing.Point(642, 100);
+            this.browseHtmlTemplateButton.Name = "browseHtmlTemplateButton";
+            this.browseHtmlTemplateButton.Size = new System.Drawing.Size(87, 23);
+            this.browseHtmlTemplateButton.TabIndex = 6;
+            this.browseHtmlTemplateButton.Text = "Browse";
+            this.browseHtmlTemplateButton.UseVisualStyleBackColor = true;
+            this.browseHtmlTemplateButton.Click += new System.EventHandler(this.browseHtmlTemplateButton_Click);
+            // 
+            // htmlTemplatePathLabel
+            // 
+            this.htmlTemplatePathLabel.AutoSize = true;
+            this.htmlTemplatePathLabel.Location = new System.Drawing.Point(7, 110);
+            this.htmlTemplatePathLabel.Name = "htmlTemplatePathLabel";
+            this.htmlTemplatePathLabel.Size = new System.Drawing.Size(109, 13);
+            this.htmlTemplatePathLabel.TabIndex = 19;
+            this.htmlTemplatePathLabel.Text = "HTML Template Path";
+            this.htmlTemplatePathLabel.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // htmlTemplatePathTextBox
+            // 
+            this.htmlTemplatePathTextBox.Location = new System.Drawing.Point(165, 103);
+            this.htmlTemplatePathTextBox.Name = "htmlTemplatePathTextBox";
+            this.htmlTemplatePathTextBox.Size = new System.Drawing.Size(464, 20);
+            this.htmlTemplatePathTextBox.TabIndex = 5;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(210)))), ((int)(((byte)(237)))));
-            this.ClientSize = new System.Drawing.Size(748, 599);
+            this.ClientSize = new System.Drawing.Size(739, 606);
+            this.Controls.Add(this.htmlTemplatePathTextBox);
+            this.Controls.Add(this.htmlTemplatePathLabel);
             this.Controls.Add(this.emailDelaySecondsTextBox);
             this.Controls.Add(this.EmailMaxRetryAttemptsTextBox);
             this.Controls.Add(this.emailDelaySecondsLabel);
@@ -358,6 +390,7 @@ namespace PhotoDispatcherView
             this.Controls.Add(this.BrowsePhotosButton);
             this.Controls.Add(this.photosDirectoryTextBox);
             this.Controls.Add(this.photosDirectoryLabel);
+            this.Controls.Add(this.browseHtmlTemplateButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -398,5 +431,8 @@ namespace PhotoDispatcherView
         private System.Windows.Forms.TextBox EmailMaxRetryAttemptsTextBox;
         private System.Windows.Forms.Label emailDelaySecondsLabel;
         private System.Windows.Forms.Label emailRetryAttemptsLabel;
+        private System.Windows.Forms.Button browseHtmlTemplateButton;
+        private System.Windows.Forms.Label htmlTemplatePathLabel;
+        private System.Windows.Forms.TextBox htmlTemplatePathTextBox;
     }
 }
