@@ -30,6 +30,7 @@ namespace Photo_Dispatcher
         public string SmtpPass { get; set; } // The SMTP password
         public string EmailSubject { get; set; } // The default email subject
         public string EmailBody { get; set; } // The default email body
+        public string HtmlTemplatePath { get; set; }  // HTML template path
         public int SendDelaySeconds { get; set; } // The delay seconds between each email sent
         public int MaxRetryAttempts { get; set; } // The maximum number of retry attempts
     }

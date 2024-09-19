@@ -20,6 +20,7 @@ namespace Photo_Dispatcher
         private readonly string _smtpUser;
         private readonly string _smtpPass;
         private readonly string _fromName;
+        private readonly string _htmlTemplatePath;
         private readonly int _sendDelaySeconds;
         private readonly int _maxRetryAttempts;
         private readonly ILogger<EmailSender> _logger;
@@ -32,15 +33,16 @@ namespace Photo_Dispatcher
             _smtpUser = settings.SmtpUser;
             _smtpPass = settings.SmtpPass;
             _fromName = settings.FromName;
+            _htmlTemplatePath = settings.HtmlTemplatePath;
             _sendDelaySeconds = settings.SendDelaySeconds;
             _maxRetryAttempts = settings.MaxRetryAttempts;
             _logger = logger;
         }
 
         /// <summary>
-        /// Sends an email using the specified email details.
+        /// Sends an email using the specified email details, with retries and delays between attempts.
         /// </summary>
-        /// <param name="mail">The email details including recipient, subject, body, and optional attachment.</param>
+        /// <param name="mail">The email details including recipient, subject, body, and optional attachments.</param>
         public void SendEmail(Email mail)
         {
             var stopwatch = Stopwatch.StartNew(); // Start the timer for sending email
@@ -66,7 +68,8 @@ namespace Photo_Dispatcher
                     using(var message = new MailMessage(fromAddress, toAddress)
                     {
                         Subject = mail.Subject,
-                        Body = mail.Body
+                        Body = GenerateEmailBody(mail.Body),  // Using the HTML template to generate the body
+                        IsBodyHtml = true  // Ensuring the email body is treated as HTML
                     })
                     {
                         foreach(var attachmentPath in mail.AttachmentPaths)
@@ -115,6 +118,23 @@ namespace Photo_Dispatcher
                 _logger.LogError($"Failed to send email to {mail.To} after {retryAttempts} attempts");
                 Program.IncrementEmailNotSent();
             }
+        }
+
+        /// <summary>
+        /// Generates the email body by inserting the email text into the HTML template.
+        /// </summary>
+        /// <param name="emailBody">The plain text email body to insert into the template.</param>
+        /// <returns>The final email body with the HTML template applied.</returns>
+        private string GenerateEmailBody(string emailBody)
+        {
+            if(!File.Exists(_htmlTemplatePath))
+            {
+                _logger.LogWarning($"HTML template not found at {_htmlTemplatePath}. Using plain email body.");
+                return emailBody;  // If the template isn't found, use the plain email body
+            }
+
+            string templateContent = File.ReadAllText(_htmlTemplatePath);
+            return templateContent.Replace("{{EmailBody}}", emailBody);  // Insert the email body into the HTML template
         }
 
     }
