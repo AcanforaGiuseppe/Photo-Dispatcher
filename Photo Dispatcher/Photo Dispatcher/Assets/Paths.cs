@@ -8,5 +8,6 @@ namespace Photo_Dispatcher
     {
         public string PhotosDirectory { get; set; } // The directory where photos are stored
         public string CsvFilePath { get; set; } // The path to the CSV file with email mappings
+        public string HtmlTemplatePath { get; set; }  // HTML template path
     }
 }

@@ -170,7 +170,8 @@ namespace Photo_Dispatcher
                 ["Paths"] = new JObject
                 {
                     ["PhotosDirectory"] = "",
-                    ["CsvFilePath"] = ""
+                    ["CsvFilePath"] = "",
+                    ["HtmlTemplatePath"] = ""
                 }
             };
 

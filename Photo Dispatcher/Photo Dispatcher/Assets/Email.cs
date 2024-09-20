@@ -10,13 +10,15 @@ namespace Photo_Dispatcher
         public string Subject { get; set; } // The subject of the email
         public string Body { get; set; } // The body of the email
         public List<string> AttachmentPaths { get; set; } // The paths to the attachments
+        public string HtmlTemplate { get; set; } // The path to the HTML template
 
-        public Email(string to, string subject, string body, List<string> attachmentPaths)
+        public Email(string to, string subject, string body, List<string> attachmentPaths, string htmlTemplate)
         {
             To = to;
             Subject = subject;
             Body = body;
             AttachmentPaths = attachmentPaths;
+            HtmlTemplate = htmlTemplate;
         }
     }
 
@@ -30,7 +32,6 @@ namespace Photo_Dispatcher
         public string SmtpPass { get; set; } // The SMTP password
         public string EmailSubject { get; set; } // The default email subject
         public string EmailBody { get; set; } // The default email body
-        public string HtmlTemplatePath { get; set; }  // HTML template path
         public int SendDelaySeconds { get; set; } // The delay seconds between each email sent
         public int MaxRetryAttempts { get; set; } // The maximum number of retry attempts
     }

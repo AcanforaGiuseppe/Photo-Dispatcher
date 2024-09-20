@@ -20,7 +20,6 @@ namespace Photo_Dispatcher
         private readonly string _smtpUser;
         private readonly string _smtpPass;
         private readonly string _fromName;
-        private readonly string _htmlTemplatePath;
         private readonly int _sendDelaySeconds;
         private readonly int _maxRetryAttempts;
         private readonly ILogger<EmailSender> _logger;
@@ -33,7 +32,6 @@ namespace Photo_Dispatcher
             _smtpUser = settings.SmtpUser;
             _smtpPass = settings.SmtpPass;
             _fromName = settings.FromName;
-            _htmlTemplatePath = settings.HtmlTemplatePath;
             _sendDelaySeconds = settings.SendDelaySeconds;
             _maxRetryAttempts = settings.MaxRetryAttempts;
             _logger = logger;
@@ -68,8 +66,8 @@ namespace Photo_Dispatcher
                     using(var message = new MailMessage(fromAddress, toAddress)
                     {
                         Subject = mail.Subject,
-                        Body = GenerateEmailBody(mail.Body),  // Using the HTML template to generate the body
-                        IsBodyHtml = true  // Ensuring the email body is treated as HTML
+                        Body = GenerateEmailBody(mail.Body, mail.HtmlTemplate),
+                        IsBodyHtml = true // Sets the email body as HTML
                     })
                     {
                         foreach(var attachmentPath in mail.AttachmentPaths)
@@ -125,15 +123,15 @@ namespace Photo_Dispatcher
         /// </summary>
         /// <param name="emailBody">The plain text email body to insert into the template.</param>
         /// <returns>The final email body with the HTML template applied.</returns>
-        private string GenerateEmailBody(string emailBody)
+        private string GenerateEmailBody(string emailBody, string htmlTemplatePath)
         {
-            if(!File.Exists(_htmlTemplatePath))
+            if(!File.Exists(htmlTemplatePath) || string.IsNullOrEmpty(htmlTemplatePath))
             {
-                _logger.LogWarning($"HTML template not found at {_htmlTemplatePath}. Using plain email body.");
+                _logger.LogWarning($"HTML template not found at \"{htmlTemplatePath}\". Using plain email body.");
                 return emailBody;  // If the template isn't found, use the plain email body
             }
 
-            string templateContent = File.ReadAllText(_htmlTemplatePath);
+            string templateContent = File.ReadAllText(htmlTemplatePath);
             return templateContent.Replace("{{EmailBody}}", emailBody);  // Insert the email body into the HTML template
         }
 

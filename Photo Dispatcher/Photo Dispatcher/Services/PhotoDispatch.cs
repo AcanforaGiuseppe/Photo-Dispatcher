@@ -15,6 +15,7 @@ namespace Photo_Dispatcher
     {
         private readonly string _photosDirectory;
         private readonly CsvLoader _csvLoader;
+        private readonly string _htmlTemplatePath;
         private readonly EmailSender _emailSender;
         private readonly string _emailSubject;
         private readonly string _emailBody;
@@ -24,6 +25,7 @@ namespace Photo_Dispatcher
         {
             _photosDirectory = paths.Value.PhotosDirectory;
             _csvLoader = csvLoader;
+            _htmlTemplatePath = paths.Value.HtmlTemplatePath;
             _emailSender = emailSender;
             _emailSubject = emailSettings.Value.EmailSubject;
             _emailBody = emailSettings.Value.EmailBody;
@@ -77,7 +79,7 @@ namespace Photo_Dispatcher
 
                     if(photoPaths.Count > 0)
                     {
-                        var mail = new Email(email, _emailSubject, _emailBody, photoPaths);
+                        var mail = new Email(email, _emailSubject, _emailBody, photoPaths, _htmlTemplatePath);
                         _emailSender.SendEmail(mail);
                     }
                 }
