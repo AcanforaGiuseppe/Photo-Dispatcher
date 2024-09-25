@@ -281,12 +281,27 @@ namespace PhotoDispatcherView
         // Browse HTML Template Button Click Event Handler
         private void browseHtmlTemplateButton_Click(object sender, EventArgs e)
         {
-            using(var openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "HTML files (*.html)|*.html|All files (*.*)|*.*";
+            // Imposta il percorso della cartella dove sono salvati i template per le email
+            string templateFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Photo Dispatcher\EmailTemplates");
 
-                if(openFileDialog.ShowDialog() == DialogResult.OK)
-                    htmlTemplatePathTextBox.Text = openFileDialog.FileName;
+            // Converte il percorso relativo in un percorso assoluto
+            templateFolderPath = Path.GetFullPath(templateFolderPath);
+
+            // Controlla se la cartella dei template esiste
+            if(Directory.Exists(templateFolderPath))
+            {
+                using(var openFileDialog = new OpenFileDialog())
+                {
+                    // Filtra per mostrare solo i file .html
+                    openFileDialog.Filter = "HTML files (*.html)|*.html|All files (*.*)|*.*";
+
+                    // Imposta il percorso iniziale alla cartella dei template
+                    openFileDialog.InitialDirectory = templateFolderPath;
+
+                    // Mostra il dialog e assegna il percorso selezionato alla text box
+                    if(openFileDialog.ShowDialog() == DialogResult.OK)
+                        htmlTemplatePathTextBox.Text = openFileDialog.FileName;
+                }
             }
         }
 
