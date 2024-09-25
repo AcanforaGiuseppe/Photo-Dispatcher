@@ -20,6 +20,7 @@ namespace PhotoDispatcherView
         public SettingsForm()
         {
             InitializeComponent();
+            InitializeDragDrop();
         }
 
         #region Empty Methods
@@ -97,6 +98,9 @@ namespace PhotoDispatcherView
         { }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        { }
+
+        private void htmlTemplatePathTextBox_TextChanged(object sender, EventArgs e)
         { }
 
         #endregion
@@ -340,6 +344,52 @@ namespace PhotoDispatcherView
             catch(Exception ex)
             {
                 MessageBox.Show("Errore nell'apertura del browser: " + ex.Message);
+            }
+        }
+
+        private void textBox_DragEnter(object sender, DragEventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            if(textBox != null && e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                // Check for Photos Directory (only directories are allowed)
+                if(textBox == photosDirectoryTextBox && Directory.Exists(files[0]))
+                    e.Effect = DragDropEffects.Copy; // Allow the drop (directory accepted)
+                // Check for CSV File Path (only .csv files are allowed)
+                else if(textBox == csvFilePathTextBox && Path.GetExtension(files[0]).Equals(".csv", StringComparison.OrdinalIgnoreCase))
+                    e.Effect = DragDropEffects.Copy; // Allow the drop (csv file accepted)
+                // Check for HTML Template Path (only .html files are allowed)
+                else if(textBox == htmlTemplatePathTextBox && Path.GetExtension(files[0]).Equals(".html", StringComparison.OrdinalIgnoreCase))
+                    e.Effect = DragDropEffects.Copy; // Allow the drop (html file accepted)
+                else
+                    e.Effect = DragDropEffects.None; // Disallow the drop (show prohibition icon)
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None; // Not a file or directory, so show prohibition icon
+            }
+        }
+
+        private void textBox_DragDrop(object sender, DragEventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            if(textBox != null)
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                if(files != null && files.Length > 0)
+                {
+                    if(textBox == photosDirectoryTextBox && Directory.Exists(files[0])) // If you're using directory (Photos Directory):
+                        textBox.Text = files[0];
+                    else if(textBox == csvFilePathTextBox && Path.GetExtension(files[0]).Equals(".csv", StringComparison.OrdinalIgnoreCase)) // If you're using CSV file (CSV File Path):
+                        textBox.Text = files[0];
+                    else if(textBox == htmlTemplatePathTextBox && Path.GetExtension(files[0]).Equals(".html", StringComparison.OrdinalIgnoreCase)) // If you're using HTML file (HTML Template Path):
+                        textBox.Text = files[0];
+                }
             }
         }
 

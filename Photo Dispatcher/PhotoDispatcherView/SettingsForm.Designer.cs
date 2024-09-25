@@ -11,7 +11,7 @@ namespace PhotoDispatcherView
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-       
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -22,6 +22,21 @@ namespace PhotoDispatcherView
                 components.Dispose();
 
             base.Dispose(disposing);
+        }
+
+        private void InitializeDragDrop()
+        {
+            // Photos Directory
+            photosDirectoryTextBox.DragEnter += new DragEventHandler(textBox_DragEnter);
+            photosDirectoryTextBox.DragDrop += new DragEventHandler(textBox_DragDrop);
+
+            // CSV File Path
+            csvFilePathTextBox.DragEnter += new DragEventHandler(textBox_DragEnter);
+            csvFilePathTextBox.DragDrop += new DragEventHandler(textBox_DragDrop);
+
+            // HTML Template Path
+            htmlTemplatePathTextBox.DragEnter += new DragEventHandler(textBox_DragEnter);
+            htmlTemplatePathTextBox.DragDrop += new DragEventHandler(textBox_DragDrop);
         }
 
         #region Windows Form Designer generated code
@@ -80,6 +95,7 @@ namespace PhotoDispatcherView
             // 
             // photosDirectoryTextBox
             // 
+            this.photosDirectoryTextBox.AllowDrop = true;
             this.photosDirectoryTextBox.Location = new System.Drawing.Point(164, 43);
             this.photosDirectoryTextBox.Name = "photosDirectoryTextBox";
             this.photosDirectoryTextBox.Size = new System.Drawing.Size(465, 20);
@@ -178,6 +194,7 @@ namespace PhotoDispatcherView
             // 
             // csvFilePathTextBox
             // 
+            this.csvFilePathTextBox.AllowDrop = true;
             this.csvFilePathTextBox.Location = new System.Drawing.Point(165, 73);
             this.csvFilePathTextBox.Name = "csvFilePathTextBox";
             this.csvFilePathTextBox.Size = new System.Drawing.Size(464, 20);
@@ -353,31 +370,33 @@ namespace PhotoDispatcherView
             // 
             // htmlTemplatePathTextBox
             // 
+            this.htmlTemplatePathTextBox.AllowDrop = true;
             this.htmlTemplatePathTextBox.Location = new System.Drawing.Point(165, 103);
             this.htmlTemplatePathTextBox.Name = "htmlTemplatePathTextBox";
             this.htmlTemplatePathTextBox.Size = new System.Drawing.Size(464, 20);
             this.htmlTemplatePathTextBox.TabIndex = 5;
+            this.htmlTemplatePathTextBox.TextChanged += new System.EventHandler(this.htmlTemplatePathTextBox_TextChanged);
             // 
             // supportLabel
             // 
             this.supportLabel.AutoSize = true;
+            this.supportLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.supportLabel.Location = new System.Drawing.Point(7, 584);
             this.supportLabel.Name = "supportLabel";
             this.supportLabel.Size = new System.Drawing.Size(92, 13);
             this.supportLabel.TabIndex = 20;
             this.supportLabel.Text = "Supporto Tecnico";
-            this.supportLabel.Cursor = Cursors.Hand;
             this.supportLabel.Click += new System.EventHandler(this.supportLabel_Click);
             // 
             // feedbackLabel
             // 
             this.feedbackLabel.AutoSize = true;
+            this.feedbackLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.feedbackLabel.Location = new System.Drawing.Point(625, 584);
             this.feedbackLabel.Name = "feedbackLabel";
             this.feedbackLabel.Size = new System.Drawing.Size(104, 13);
             this.feedbackLabel.TabIndex = 21;
             this.feedbackLabel.Text = "Lascia un Feedback";
-            this.feedbackLabel.Cursor = Cursors.Hand;
             this.feedbackLabel.Click += new System.EventHandler(this.feedbackLabel_Click);
             // 
             // SettingsForm
