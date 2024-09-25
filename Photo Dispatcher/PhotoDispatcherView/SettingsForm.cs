@@ -305,5 +305,41 @@ namespace PhotoDispatcherView
             }
         }
 
+        // Evento Click per il supporto
+        private void supportLabel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // URL della pagina di supporto
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = "https://supporturl.com/",
+                    UseShellExecute = true
+                });
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Errore nell'apertura del browser: " + ex.Message);
+            }
+        }
+
+        // Evento Click per lasciare un feedback
+        private void feedbackLabel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // URL della pagina per il feedback
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = "https://feedbackurl.com/",
+                    UseShellExecute = true
+                });
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Errore nell'apertura del browser: " + ex.Message);
+            }
+        }
+
     }
 }

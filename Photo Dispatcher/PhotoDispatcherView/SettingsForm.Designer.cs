@@ -1,6 +1,8 @@
 ﻿/*
 © Giuseppe Acanfora - PHOTODISPATCHER 2024. Tutti i diritti riservati.
 */
+using System.Windows.Forms;
+
 namespace PhotoDispatcherView
 {
     partial class SettingsForm
@@ -62,6 +64,8 @@ namespace PhotoDispatcherView
             this.browseHtmlTemplateButton = new System.Windows.Forms.Button();
             this.htmlTemplatePathLabel = new System.Windows.Forms.Label();
             this.htmlTemplatePathTextBox = new System.Windows.Forms.TextBox();
+            this.supportLabel = new System.Windows.Forms.Label();
+            this.feedbackLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // photosDirectoryLabel
@@ -354,12 +358,36 @@ namespace PhotoDispatcherView
             this.htmlTemplatePathTextBox.Size = new System.Drawing.Size(464, 20);
             this.htmlTemplatePathTextBox.TabIndex = 5;
             // 
+            // supportLabel
+            // 
+            this.supportLabel.AutoSize = true;
+            this.supportLabel.Location = new System.Drawing.Point(7, 584);
+            this.supportLabel.Name = "supportLabel";
+            this.supportLabel.Size = new System.Drawing.Size(92, 13);
+            this.supportLabel.TabIndex = 20;
+            this.supportLabel.Text = "Supporto Tecnico";
+            this.supportLabel.Cursor = Cursors.Hand;
+            this.supportLabel.Click += new System.EventHandler(this.supportLabel_Click);
+            // 
+            // feedbackLabel
+            // 
+            this.feedbackLabel.AutoSize = true;
+            this.feedbackLabel.Location = new System.Drawing.Point(625, 584);
+            this.feedbackLabel.Name = "feedbackLabel";
+            this.feedbackLabel.Size = new System.Drawing.Size(104, 13);
+            this.feedbackLabel.TabIndex = 21;
+            this.feedbackLabel.Text = "Lascia un Feedback";
+            this.feedbackLabel.Cursor = Cursors.Hand;
+            this.feedbackLabel.Click += new System.EventHandler(this.feedbackLabel_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(210)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(739, 606);
+            this.Controls.Add(this.feedbackLabel);
+            this.Controls.Add(this.supportLabel);
             this.Controls.Add(this.htmlTemplatePathTextBox);
             this.Controls.Add(this.htmlTemplatePathLabel);
             this.Controls.Add(this.emailDelaySecondsTextBox);
@@ -434,5 +462,7 @@ namespace PhotoDispatcherView
         private System.Windows.Forms.Button browseHtmlTemplateButton;
         private System.Windows.Forms.Label htmlTemplatePathLabel;
         private System.Windows.Forms.TextBox htmlTemplatePathTextBox;
+        private System.Windows.Forms.Label supportLabel;
+        private System.Windows.Forms.Label feedbackLabel;
     }
 }
