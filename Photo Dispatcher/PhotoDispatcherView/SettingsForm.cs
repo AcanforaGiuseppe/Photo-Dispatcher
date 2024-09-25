@@ -254,6 +254,8 @@ namespace PhotoDispatcherView
             emailRetryAttemptsLabel.Text = _resourceManager.GetString($"emailRetryAttemptsLabel.Text.{culture}", cultureInfo);
             htmlTemplatePathLabel.Text = _resourceManager.GetString($"htmlTemplatePathLabel.Text.{culture}", cultureInfo);
             browseHtmlTemplateButton.Text = _resourceManager.GetString($"browseHtmlTemplateButton.Text.{culture}", cultureInfo);
+            supportLabel.Text = _resourceManager.GetString($"supportLabel.Text.{culture}", cultureInfo);
+            feedbackLabel.Text = _resourceManager.GetString($"feedbackLabel.Text.{culture}", cultureInfo);
 
             // Tooltips
             toolTip.SetToolTip(this.photosDirectoryLabel, _resourceManager.GetString($"photosDirectoryLabel.ToolTip.{culture}", cultureInfo));
@@ -305,7 +307,7 @@ namespace PhotoDispatcherView
             }
         }
 
-        // Evento Click per il supporto
+        // Support Click Event
         private void supportLabel_Click(object sender, EventArgs e)
         {
             try
@@ -323,7 +325,7 @@ namespace PhotoDispatcherView
             }
         }
 
-        // Evento Click per lasciare un feedback
+        // Feedback Click Event
         private void feedbackLabel_Click(object sender, EventArgs e)
         {
             try

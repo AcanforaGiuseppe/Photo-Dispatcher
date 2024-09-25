@@ -295,6 +295,24 @@ namespace PhotoDispatcherView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Leave a Feedback.
+        /// </summary>
+        internal static string feedbackLabel_Text_en {
+            get {
+                return ResourceManager.GetString("feedbackLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lascia un Feedback.
+        /// </summary>
+        internal static string feedbackLabel_Text_it {
+            get {
+                return ResourceManager.GetString("feedbackLabel.Text.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sender Name.
         /// </summary>
         internal static string fromNameLabel_Text_en {
@@ -597,6 +615,24 @@ namespace PhotoDispatcherView.Properties {
         internal static string smtpUserLabel_ToolTip_it {
             get {
                 return ResourceManager.GetString("smtpUserLabel.ToolTip.it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Technical Support.
+        /// </summary>
+        internal static string supportLabel_Text_en {
+            get {
+                return ResourceManager.GetString("supportLabel.Text.en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supporto Tecnico.
+        /// </summary>
+        internal static string supportLabel_Text_it {
+            get {
+                return ResourceManager.GetString("supportLabel.Text.it", resourceCulture);
             }
         }
     }

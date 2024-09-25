@@ -297,4 +297,16 @@
   <data name="browseHtmlTemplateButton.Text.it" xml:space="preserve">
     <value>Sfoglia</value>
   </data>
+  <data name="feedbackLabel.Text.en" xml:space="preserve">
+    <value>Leave a Feedback</value>
+  </data>
+  <data name="feedbackLabel.Text.it" xml:space="preserve">
+    <value>Lascia un Feedback</value>
+  </data>
+  <data name="supportLabel.Text.en" xml:space="preserve">
+    <value>Technical Support</value>
+  </data>
+  <data name="supportLabel.Text.it" xml:space="preserve">
+    <value>Supporto Tecnico</value>
+  </data>
 </root>
