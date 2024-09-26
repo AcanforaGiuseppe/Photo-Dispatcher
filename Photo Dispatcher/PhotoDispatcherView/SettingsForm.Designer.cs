@@ -383,9 +383,9 @@ namespace PhotoDispatcherView
             this.supportLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.supportLabel.Location = new System.Drawing.Point(7, 584);
             this.supportLabel.Name = "supportLabel";
-            this.supportLabel.Size = new System.Drawing.Size(92, 13);
+            this.supportLabel.Size = new System.Drawing.Size(94, 13);
             this.supportLabel.TabIndex = 20;
-            this.supportLabel.Text = "Supporto Tecnico";
+            this.supportLabel.Text = "Technical Support";
             this.supportLabel.Click += new System.EventHandler(this.supportLabel_Click);
             // 
             // feedbackLabel
@@ -394,9 +394,9 @@ namespace PhotoDispatcherView
             this.feedbackLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.feedbackLabel.Location = new System.Drawing.Point(625, 584);
             this.feedbackLabel.Name = "feedbackLabel";
-            this.feedbackLabel.Size = new System.Drawing.Size(104, 13);
+            this.feedbackLabel.Size = new System.Drawing.Size(97, 13);
             this.feedbackLabel.TabIndex = 21;
-            this.feedbackLabel.Text = "Lascia un Feedback";
+            this.feedbackLabel.Text = "Leave a Feedback";
             this.feedbackLabel.Click += new System.EventHandler(this.feedbackLabel_Click);
             // 
             // SettingsForm
