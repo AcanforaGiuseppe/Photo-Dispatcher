@@ -271,7 +271,7 @@
     <value>Email Retry Attempts</value>
   </data>
   <data name="emailRetryAttemptsLabel.Text.it" xml:space="preserve">
-    <value>Max Tentativi Reinvio Email</value>
+    <value>Max Tentativi Rinvio Email</value>
   </data>
   <data name="emailRetryAttemptsLabel.ToolTip.en" xml:space="preserve">
     <value>Specify the maximum number of retry attempts for sending failed emails.</value>

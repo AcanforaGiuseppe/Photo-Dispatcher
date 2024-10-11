@@ -232,7 +232,7 @@ namespace PhotoDispatcherView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max Tentativi Reinvio Email.
+        ///   Looks up a localized string similar to Max Tentativi Rinvio Email.
         /// </summary>
         internal static string emailRetryAttemptsLabel_Text_it {
             get {
