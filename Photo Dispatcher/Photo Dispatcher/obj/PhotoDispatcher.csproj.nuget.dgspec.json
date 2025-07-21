@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj": {}
+    "C:\\Users\\acanf\\Desktop\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj": {}
   },
   "projects": {
-    "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj": {
+    "C:\\Users\\acanf\\Desktop\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj",
+        "projectUniqueName": "C:\\Users\\acanf\\Desktop\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj",
         "projectName": "PhotoDispatcher",
-        "projectPath": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj",
+        "projectPath": "C:\\Users\\acanf\\Desktop\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\PhotoDispatcher.csproj",
         "packagesPath": "C:\\Users\\acanf\\.nuget\\packages\\",
-        "outputPath": "F:\\Development\\- Private Projects\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\obj\\",
+        "outputPath": "C:\\Users\\acanf\\Desktop\\Photo Dispatcher\\Photo Dispatcher\\Photo Dispatcher\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\acanf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -91,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

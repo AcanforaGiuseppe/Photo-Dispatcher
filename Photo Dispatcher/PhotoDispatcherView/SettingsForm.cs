@@ -319,7 +319,7 @@ namespace PhotoDispatcherView
                 // URL della pagina di supporto
                 System.Diagnostics.Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://supporturl.com/",
+                    FileName = "https://photodispatcher.com/support/",
                     UseShellExecute = true
                 });
             }
@@ -337,7 +337,7 @@ namespace PhotoDispatcherView
                 // URL della pagina per il feedback
                 System.Diagnostics.Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://feedbackurl.com/",
+                    FileName = "https://photodispatcher.com/feedback/",
                     UseShellExecute = true
                 });
             }
